@@ -7,14 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-<style>
-        body
-    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden transition-opacity"></div>
-
-    <button id="open-sidebar" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg z-30 md:hidden hover:bg-blue-700 transition-all active:scale-95">
-        <i data-lucide="list" class="w-6 h-6"></i>
-    </button>
-    { 
+    <style>
+        body { 
             font-family: 'Noto Sans KR', sans-serif; 
         }
         
@@ -27,10 +21,14 @@
         .section-title::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 50px; height: 2px; background-color: #3b82f6; }
     </style>
 </head>
-<!-- 모바일에서 스크롤을 방해하는 flex, 높이 제한 등의 속성을 모두 배제한 순정 렌더링 -->
 <body class="bg-gray-50 text-gray-800 antialiased block">
 
-    <!-- PC 버전 전용 목차 (모바일(md 미만)에서는 완전히 숨김 처리) -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden transition-opacity"></div>
+
+    <button id="open-sidebar" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg z-30 md:hidden hover:bg-blue-700 transition-all active:scale-95">
+        <i data-lucide="list" class="w-6 h-6"></i>
+    </button>
+
     <aside id="sidebar" class="fixed inset-y-0 left-0 bg-white w-64 border-r border-gray-200 z-50 flex flex-col h-screen transform -translate-x-full md:translate-x-0 transition-transform duration-300 shadow-2xl md:shadow-none">
         
         <button id="close-sidebar" class="absolute top-5 right-4 text-gray-400 hover:text-gray-700 md:hidden">
@@ -66,18 +64,14 @@
         </nav>
     </aside>
 
-    <!-- 메인 본문 -->
-    <!-- 모바일에서는 여백 없이 꽉 채우고, PC에서만 좌측 목차만큼 여백(md:ml-64) 부여 -->
     <main class="md:ml-64 p-5 sm:p-6 md:p-10 lg:p-12 max-w-5xl bg-white shadow-sm mx-auto md:mx-0">
         
-        <!-- Header / Infobox -->
         <div class="mb-12 flex flex-col md:flex-row md:items-start justify-between gap-8 pt-4 md:pt-0">
             <div class="flex-1">
                 <h1 class="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">큐플레이 아카이브</h1>
                 <p class="text-xl text-gray-500">넥슨 메이플월드 기반 큐플레이 아카이브 아장위키</p>
             </div>
             
-            <!-- Info Box -->
             <div class="w-full md:w-72 bg-gray-50 border border-gray-200 rounded-xl overflow-hidden shadow-sm text-sm">
                 <div class="bg-blue-600 text-white font-bold py-2 px-4 text-center">
                     게임 정보
@@ -107,7 +101,6 @@
             </div>
         </div>
 
-        <!-- 1. 개요 -->
         <section id="intro" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="book-open" class="text-blue-500 w-6 h-6"></i> 1. 개요
@@ -122,7 +115,6 @@
             </div>
         </section>
 
-        <!-- 2. 관련 링크 -->
         <section id="links" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="link" class="text-blue-500 w-6 h-6"></i> 2. 관련 링크
@@ -159,7 +151,6 @@
             </div>
         </section>
 
-        <!-- 3. 개발자 -->
         <section id="developer" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="code" class="text-blue-500 w-6 h-6"></i> 3. 개발자
@@ -182,7 +173,6 @@
             </div>
         </section>
 
-        <!-- 4. 설치 및 하는 법 -->
         <section id="install" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="download" class="text-blue-500 w-6 h-6"></i> 4. 설치 및 하는 법
@@ -229,7 +219,6 @@
             </div>
         </section>
 
-        <!-- 5. 게임 규정 -->
         <section id="rules" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="shield-alert" class="text-blue-500 w-6 h-6"></i> 5. 게임 규정
@@ -264,7 +253,6 @@
             </div>
         </section>
 
-        <!-- 6. 게임 모드 -->
         <section id="modes" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="gamepad-2" class="text-blue-500 w-6 h-6"></i> 6. 게임 모드
@@ -315,7 +303,6 @@
             </div>
         </section>
 
-        <!-- 7. 레벨 기준 -->
         <section id="level" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="trending-up" class="text-blue-500 w-6 h-6"></i> 7. 레벨 기준
@@ -369,7 +356,6 @@
             </div>
         </section>
 
-        <!-- 8. 서바이벌 보상 -->
         <section id="rewards" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="award" class="text-blue-500 w-6 h-6"></i> 8. 서바이벌 보상 시스템
@@ -435,14 +421,12 @@
             </div>
         </section>
 
-        <!-- 9. 단축키 및 명령어 -->
         <section id="hotkeys" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="keyboard" class="text-blue-500 w-6 h-6"></i> 9. 단축키 및 명령어
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- 단축키 -->
                 <div>
                     <h3 class="text-lg font-bold mb-3 border-b pb-2 text-indigo-700">단축키</h3>
                     <ul class="space-y-2 text-sm text-gray-700 font-mono">
@@ -461,7 +445,6 @@
                         <li><kbd class="bg-gray-100 border border-gray-300 rounded px-1 py-0.5 font-bold">1~4</kbd> : 객관식 문제 정답판 들기 (중복 입력 가능)</li>
                     </ul>
                 </div>
-                <!-- 명령어 -->
                 <div>
                     <h3 class="text-lg font-bold mb-3 border-b pb-2 text-indigo-700">명령어 (채팅창 입력)</h3>
                     <ul class="space-y-2 text-sm text-gray-700 font-mono">
@@ -485,7 +468,6 @@
             </div>
         </section>
 
-        <!-- 10. 아이템 상점 및 거래 -->
         <section id="shop" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="shopping-cart" class="text-blue-500 w-6 h-6"></i> 10. 아이템 상점 및 거래 시스템
@@ -523,14 +505,12 @@
             </div>
         </section>
 
-        <!-- 11. 기타 게임 정보 -->
         <section id="misc" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="layers" class="text-blue-500 w-6 h-6"></i> 11. 기타 게임 정보
             </h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- 분장실 정보 -->
                 <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
                     <h3 class="font-bold text-indigo-700 text-lg mb-3 border-b pb-2">분장실 정보</h3>
                     <ul class="list-disc list-inside space-y-2 text-sm text-gray-700">
@@ -541,7 +521,6 @@
                     </ul>
                 </div>
 
-                <!-- 유저 기능 정보 -->
                 <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
                     <h3 class="font-bold text-indigo-700 text-lg mb-3 border-b pb-2">유저 기능 정보</h3>
                     <ul class="list-disc list-inside space-y-2 text-sm text-gray-700">
@@ -552,7 +531,6 @@
                     </ul>
                 </div>
 
-                <!-- 아이템 정보 -->
                 <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm lg:col-span-2">
                     <h3 class="font-bold text-indigo-700 text-lg mb-3 border-b pb-2">아이템 관련 주의사항</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
@@ -575,14 +553,12 @@
             </div>
         </section>
 
-        <!-- 12. 유저 이용 Tip -->
         <section id="tips" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="lightbulb" class="text-yellow-500 w-6 h-6"></i> 12. 유저 이용 Tip
             </h2>
 
             <div class="space-y-6">
-                <!-- 게임/메월 팁 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <h3 class="font-bold text-lg mb-2 text-gray-800">게임 이용 팁</h3>
@@ -603,7 +579,6 @@
                     </div>
                 </div>
 
-                <!-- 슬라임 조합 -->
                 <div class="bg-indigo-50 border border-indigo-100 p-5 rounded-xl">
                     <h3 class="font-bold text-lg mb-3 text-indigo-800"><i data-lucide="flask-conical" class="inline w-5 h-5 mb-1"></i> 슬라임 아이템 가성비 세팅 팁</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-800">
@@ -626,7 +601,6 @@
                     </div>
                 </div>
 
-                <!-- 용어 사전 -->
                 <div>
                     <h3 class="font-bold text-lg mb-3 text-gray-800 border-b pb-2">유저 용어 사전</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2 text-sm">
@@ -650,14 +624,12 @@
             </div>
         </section>
 
-        <!-- 13. 여담 -->
         <section id="trivia" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="message-circle" class="text-blue-500 w-6 h-6"></i> 13. 여담 (개발자 코멘트 및 히스토리)
             </h2>
             
             <div class="space-y-8">
-                <!-- 개발자 언급 내용 -->
                 <div>
                     <h3 class="font-bold text-lg mb-4 text-gray-800">개발자 주요 언급 내용</h3>
                     <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 text-sm text-gray-700 space-y-3">
@@ -671,7 +643,6 @@
                     </div>
                 </div>
 
-                <!-- 서버 주요 히스토리 -->
                 <div>
                     <h3 class="font-bold text-lg mb-4 text-gray-800">서버 주요 히스토리</h3>
                     <div class="relative border-l-2 border-blue-200 ml-3 py-2 space-y-4 text-sm text-gray-700">
@@ -712,12 +683,10 @@
             </div>
         </section>
 
-        <!-- 부록 -->
         <section class="mb-12 border-t-2 border-gray-200 pt-8 mt-12">
             <h2 class="text-2xl font-black text-gray-900 mb-6 text-center">부록</h2>
             
             <div class="space-y-8">
-                <!-- 부록 1 -->
                 <div id="app1" class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm text-center">
                     <h3 class="font-bold text-lg text-gray-800 mb-4">부록 1. 큐플레이 감정표현</h3>
                     <div class="py-10 bg-gray-50 border border-dashed border-gray-300 rounded-lg text-gray-400 flex flex-col items-center justify-center">
@@ -727,7 +696,6 @@
                     </div>
                 </div>
 
-                <!-- 부록 2 -->
                 <div id="app2" class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
                     <h3 class="font-bold text-lg text-gray-800 mb-2">부록 2. 큐플레이 성형·아바타</h3>
                     <p class="text-sm text-gray-700 mb-4">큐플레이 성형은 크게 3가지로 나뉩니다.</p>
@@ -742,7 +710,6 @@
                     </div>
                 </div>
 
-                <!-- 부록 3 -->
                 <div id="app3" class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
                     <h3 class="font-bold text-lg text-gray-800 mb-2">부록 3. 큐플레이 엠블럼</h3>
                     <p class="text-sm text-gray-700 mb-4">큐플레이 본섭 기준, 유니크 엠블럼과 일반 엠블럼으로 나뉩니다.</p>
@@ -773,7 +740,7 @@
         </footer>
 
     </main>
-<script>
+    <script>
         lucide.createIcons();
 
         // 모바일 목차 열고 닫기 기능
