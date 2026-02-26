@@ -8,7 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 <style>
-        body { 
+        body
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden transition-opacity"></div>
+
+    <button id="open-sidebar" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg z-30 md:hidden hover:bg-blue-700 transition-all active:scale-95">
+        <i data-lucide="list" class="w-6 h-6"></i>
+    </button>
+    { 
             font-family: 'Noto Sans KR', sans-serif; 
         }
         
@@ -25,7 +31,12 @@
 <body class="bg-gray-50 text-gray-800 antialiased block">
 
     <!-- PC 버전 전용 목차 (모바일(md 미만)에서는 완전히 숨김 처리) -->
-    <aside id="sidebar" class="hidden md:flex fixed inset-y-0 left-0 bg-white w-64 border-r border-gray-200 z-40 flex-col h-screen">
+    <aside id="sidebar" class="fixed inset-y-0 left-0 bg-white w-64 border-r border-gray-200 z-50 flex flex-col h-screen transform -translate-x-full md:translate-x-0 transition-transform duration-300 shadow-2xl md:shadow-none">
+        
+        <button id="close-sidebar" class="absolute top-5 right-4 text-gray-400 hover:text-gray-700 md:hidden">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+
         <div class="p-6 border-b border-gray-100 bg-blue-50">
             <h1 class="text-xl font-black text-blue-700 tracking-tight">QPlay Archive</h1>
             <p class="text-xs text-gray-500 mt-1">아장위키</p>
@@ -762,13 +773,27 @@
         </footer>
 
     </main>
-
-    <script>
-        // PC 화면에서 사용할 아이콘 렌더링 (모바일 관련 동작은 모두 삭제됨)
+<script>
         lucide.createIcons();
 
-        // PC 전용 목차 부드러운 스크롤 이동 기능
+        // 모바일 목차 열고 닫기 기능
+        const sidebar = document.getElementById('sidebar');
+        const openBtn = document.getElementById('open-sidebar');
+        const closeBtn = document.getElementById('close-sidebar');
+        const overlay = document.getElementById('mobile-overlay');
         const sidebarLinks = document.querySelectorAll('#sidebar a');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        // 버튼이나 어두운 배경을 누르면 목차가 열리거나 닫힘
+        openBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // 부드러운 스크롤 & 모바일에서 목차 누르면 자동 닫힘 기능
         sidebarLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -777,6 +802,11 @@
                 
                 if (targetElement) {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // 모바일 화면(창 너비 768px 미만)일 때만 항목 누른 후 목차 닫기
+                    if (window.innerWidth < 768) {
+                        toggleMenu();
+                    }
                 }
             });
         });
