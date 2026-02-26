@@ -7,24 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-   <style>
+<style>
         body { 
             font-family: 'Noto Sans KR', sans-serif; 
         }
-        
-        /* --- 🚨 모바일 이중 스크롤 & 터치 씹힘 강제 삭제 --- */
-        html, body {
-            height: auto !important;
-            overflow-y: hidden !important; /* 내부 세로 스크롤 영구 삭제 */
-            touch-action: pan-y !important; /* 터치 드래그를 무조건 바깥 화면으로 토스 */
-            -webkit-overflow-scrolling: touch;
-        }
-
-        /* 표(Table)나 가로 스크롤 영역을 터치해도 위아래 스크롤이 먹히도록 강제 */
-        .overflow-x-auto {
-            touch-action: pan-x pan-y !important;
-        }
-        /* ------------------------------------------------ */
         
         /* PC용 목차 스크롤바 디자인 */
         .sidebar-scroll::-webkit-scrollbar { width: 6px; }
