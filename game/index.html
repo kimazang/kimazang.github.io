@@ -38,7 +38,7 @@
         }
 
         h1 {
-            font-size: clamp(1.8rem, 4vw, 3rem); /* 반응형 폰트 사이즈 */
+            font-size: clamp(1.8rem, 4vw, 3rem);
             margin-top: 30px;
             margin-bottom: 10px;
             color: #fff;
@@ -73,7 +73,6 @@
             box-sizing: border-box;
         }
 
-        /* 컨트롤 패널 */
         .controls {
             margin-bottom: 30px;
             display: flex;
@@ -104,11 +103,11 @@
             background-color: var(--yellow);
         }
 
-        /* 대진표 영역 - 가로 스크롤 방지 및 반응형 적용 */
+        /* 대진표 영역 */
         .scroll-wrapper {
             width: 100%;
             max-width: 100vw;
-            overflow-x: hidden; /* 스크롤바 완전 숨김 */
+            overflow-x: hidden;
             padding: 20px 0 60px 0;
             display: flex;
             justify-content: center;
@@ -118,14 +117,14 @@
         .pyramid-container {
             position: relative;
             display: flex;
-            flex-direction: column-reverse; /* 아래부터 위로 (16강 -> 결승) */
-            align-items: center;
-            gap: clamp(20px, 4vw, 40px); /* 화면 크기에 비례하는 간격 */
-            width: 96%; /* 전체 화면 너비 기준 (스크롤 없이 꽉 차게) */
+            flex-direction: column-reverse;
+            align-items: stretch; /* 하위 row들이 100% 너비를 쓰도록 설정 */
+            gap: clamp(20px, 4vw, 40px);
+            width: 98%;
             max-width: 1200px;
+            box-sizing: border-box;
         }
 
-        /* 대진 선을 그릴 캔버스 */
         #linesCanvas {
             position: absolute;
             top: 0;
@@ -134,26 +133,27 @@
             pointer-events: none;
         }
 
-        /* 라운드 및 매치 구조 */
+        /* 완벽한 좌우 대칭을 위한 Flex 구조 고정 */
         .row {
             display: flex;
-            justify-content: space-between; /* 전체 공간에 고르게 분배 */
             width: 100%;
             z-index: 2;
         }
 
         .match {
             display: flex;
-            gap: clamp(2px, 1vw, 20px); /* 반응형 갭 */
-            position: relative;
+            /* 핵심: 이름 길이에 상관없이 모든 매치가 정확히 동일한 너비를 가짐 */
+            flex: 1 1 0; 
             justify-content: center;
-            flex: 1; /* 매치별 간격 동일하게 보장 */
+            align-items: center;
+            gap: clamp(2px, 1vw, 15px);
+            position: relative;
         }
 
-        /* 둥둥 떠다니는 버블 (Y2K 스타일, 반응형 사이즈 적용) */
+        /* 둥둥 떠다니는 버블 */
         .bubble {
-            width: clamp(30px, 5vw, 75px); /* 최소 30px, 최대 75px로 유연하게 조절 */
-            height: clamp(30px, 5vw, 75px);
+            width: clamp(35px, 5vw, 75px); 
+            height: clamp(35px, 5vw, 75px);
             border-radius: 50%;
             border: clamp(1px, 0.3vw, 3px) solid #fff;
             background-color: #f0f0f0; 
@@ -165,15 +165,15 @@
             align-items: center;
             justify-content: center;
             color: transparent;
-            font-size: clamp(0.5rem, 0.8vw, 0.95rem); /* 반응형 폰트 */
+            font-size: clamp(0.5rem, 0.9vw, 0.95rem);
             font-weight: bold;
             cursor: pointer;
             position: relative;
             transition: transform 0.1s, filter 0.2s;
             user-select: none;
+            flex-shrink: 0; /* 버블이 찌그러지지 않게 고정 */
         }
 
-        /* 버블 하이라이트 (광택 효과) */
         .bubble::after {
             content: '';
             position: absolute;
@@ -208,18 +208,17 @@
             box-shadow: none;
         }
         .bubble.empty::after {
-            display: none; /* 빈 버블은 광택 제거 */
+            display: none;
         }
         .bubble.empty:hover { filter: none; transform: none; }
 
-        /* 버블 안의 텍스트 컨테이너 */
         .name {
             width: 90%;
             text-align: center;
             word-break: break-all;
             line-height: 1.2;
             pointer-events: none;
-            z-index: 2; /* 광택 위로 글자 올라오게 */
+            z-index: 2;
         }
 
         .edit-mode .name {
@@ -231,7 +230,6 @@
             padding: 2px;
         }
 
-        /* 통통 튀는 대기 애니메이션 (값이 있을 때만) */
         .bubble:not(.empty) {
             animation: float 2.5s ease-in-out infinite;
         }
@@ -244,7 +242,6 @@
             50% { transform: translateY(-6px); }
         }
 
-        /* 팝 이펙트 (터질 때) */
         @keyframes pop {
             0% { transform: scale(1); }
             50% { transform: scale(1.3); filter: brightness(1.2); }
@@ -254,10 +251,9 @@
             animation: pop 0.3s forwards;
         }
 
-        /* 우승자 버블 특별 처리 */
         #winner {
-            width: clamp(60px, 8vw, 110px);
-            height: clamp(60px, 8vw, 110px);
+            width: clamp(65px, 8vw, 110px);
+            height: clamp(65px, 8vw, 110px);
             font-size: clamp(0.9rem, 1.2vw, 1.3rem);
             border-width: 4px;
         }
@@ -268,7 +264,6 @@
             left: 20%;
         }
         
-        /* 파티클 이펙트용 */
         .particle {
             position: absolute;
             width: 12px;
@@ -301,7 +296,7 @@
 
             <!-- 16강 (R16) -->
             <div class="row r16">
-                <!-- Match 1~8 -->
+                <!-- 각 match가 동일한 너비를 가집니다 -->
                 <div class="match">
                     <div class="bubble pink" id="r16-1" data-target="qf-1"><span class="name" contenteditable="true">참가자 1</span></div>
                     <div class="bubble yellow" id="r16-2" data-target="qf-1"><span class="name" contenteditable="true">참가자 2</span></div>
@@ -388,12 +383,11 @@
 
     <script>
         const colors = ['yellow', 'pink', 'green', 'blue'];
-        let isEditMode = true; // 초기 상태는 편집 모드
+        let isEditMode = true; 
 
         const toggleBtn = document.getElementById('toggleBtn');
         const container = document.getElementById('pyramid');
 
-        // 모드 전환 로직
         toggleBtn.addEventListener('click', () => {
             isEditMode = !isEditMode;
             if (isEditMode) {
@@ -401,7 +395,6 @@
                 toggleBtn.classList.add('edit-mode');
                 document.body.classList.add('edit-mode');
                 
-                // 이름 수정 가능하게
                 document.querySelectorAll('.bubble:not(.empty) .name').forEach(nameSpan => {
                     nameSpan.setAttribute('contenteditable', 'true');
                 });
@@ -410,30 +403,26 @@
                 toggleBtn.classList.remove('edit-mode');
                 document.body.classList.remove('edit-mode');
                 
-                // 이름 수정 불가능하게
                 document.querySelectorAll('.name').forEach(nameSpan => {
                     nameSpan.setAttribute('contenteditable', 'false');
                 });
             }
         });
 
-        // 초기 상태 CSS용 클래스 적용
         document.body.classList.add('edit-mode');
         toggleBtn.classList.add('edit-mode');
 
-        // 캔버스 라인 그리기 (버블끼리 연결)
         function drawLines() {
             const canvas = document.getElementById('linesCanvas');
             const ctx = canvas.getContext('2d');
             
-            // 캔버스 크기를 컨테이너 크기에 맞춤
             canvas.width = container.offsetWidth;
             canvas.height = container.offsetHeight;
             
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.strokeStyle = 'var(--line-color)';
             ctx.lineWidth = 4;
-            ctx.setLineDash([10, 10]); // 도트 느낌의 점선
+            ctx.setLineDash([10, 10]);
 
             const containerRect = container.getBoundingClientRect();
 
@@ -446,7 +435,6 @@
                     const rect1 = bubble.getBoundingClientRect();
                     const rect2 = target.getBoundingClientRect();
 
-                    // 각 요소의 중심점 계산
                     const x1 = rect1.left + rect1.width / 2 - containerRect.left;
                     const y1 = rect1.top + rect1.height / 2 - containerRect.top;
                     const x2 = rect2.left + rect2.width / 2 - containerRect.left;
@@ -454,19 +442,16 @@
 
                     ctx.beginPath();
                     ctx.moveTo(x1, y1);
-                    // 약간의 곡선을 주거나 꺾은선으로 표현 가능, 퍼즐버블 느낌이므로 직선도 무방함
                     ctx.lineTo(x2, y2);
                     ctx.stroke();
                 }
             });
         }
 
-        // 창 크기가 변하거나 요소 위치가 바뀌면 라인 다시 그리기
         window.addEventListener('resize', drawLines);
-        // 최초 로드 시 약간의 딜레이 후 그리기 (폰트 렌더링 완료 후 정확한 위치 확보)
+        // DOM 요소들이 모두 제자리를 잡은 후 선을 그리기 위해 약간의 지연
         setTimeout(drawLines, 300);
 
-        // 터지는 파티클 효과 함수
         function createParticles(x, y, colorClass) {
             const colorMap = {
                 'yellow': '#fff07c',
@@ -499,15 +484,12 @@
             }
         }
 
-        // 버블 클릭 이벤트 (승격 로직)
         document.querySelectorAll('.bubble').forEach(bubble => {
             bubble.addEventListener('click', function(e) {
-                // 편집 모드이거나 비어있으면 동작 안함
                 if (isEditMode || this.classList.contains('empty')) return;
 
                 const targetId = this.getAttribute('data-target');
                 if (!targetId) {
-                    // 우승자 버블을 클릭했을 때 (이펙트만)
                     if(this.id === 'winner' && !this.classList.contains('empty')) {
                         const rect = this.getBoundingClientRect();
                         const colorClass = Array.from(this.classList).find(c => colors.includes(c));
@@ -522,8 +504,6 @@
                 const colorClass = Array.from(this.classList).find(c => colors.includes(c));
                 const nameText = this.querySelector('.name').innerText;
 
-                // 이미 승급한 사람이 있는 자리라면 덮어씌움 처리
-                // 날아가는 시각적 효과 (클론 생성)
                 const clone = this.cloneNode(true);
                 const rect = this.getBoundingClientRect();
                 
@@ -533,36 +513,33 @@
                 clone.style.margin = '0';
                 clone.style.zIndex = '1000';
                 clone.style.transition = 'all 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
-                clone.style.animation = 'none'; // 떠다니는 애니메이션 정지
+                clone.style.animation = 'none';
 
                 document.body.appendChild(clone);
 
-                // 파티클 생성 (원래 위치)
                 createParticles(rect.left + rect.width/2, rect.top + rect.height/2, colorClass);
 
-                // Reflow
                 clone.getBoundingClientRect();
 
                 const targetRect = targetBubble.getBoundingClientRect();
                 clone.style.left = targetRect.left + 'px';
                 clone.style.top = targetRect.top + 'px';
 
-                // 애니메이션 종료 후 처리
                 setTimeout(() => {
                     clone.remove();
                     
-                    // 타겟 버블 업데이트
-                    targetBubble.className = 'bubble'; // empty 등 모두 제거
-                    targetBubble.classList.add(colorClass); // 색상 부여
+                    targetBubble.className = 'bubble';
+                    targetBubble.classList.add(colorClass);
                     targetBubble.innerHTML = `<span class="name" contenteditable="${isEditMode}">${nameText}</span>`;
                     
-                    // 파티클 생성 (도착 위치)
                     createParticles(targetRect.left + targetRect.width/2, targetRect.top + targetRect.height/2, colorClass);
                     
                     targetBubble.classList.add('pop-anim');
                     setTimeout(() => targetBubble.classList.remove('pop-anim'), 300);
 
-                    // 우승자에 도달했을 경우 특별 처리
+                    // 승격 애니메이션 후 선 다시 그리기 (버블 내용 변경 후 위치 미세 조정 대비)
+                    drawLines();
+
                     if(targetId === 'winner') {
                         setTimeout(() => {
                             alert(`🎉💖 축하합니다! [${nameText}] 님이 최종 우승하셨습니다! 💖🎉`);
@@ -573,14 +550,18 @@
             });
         });
 
-        // 초기화 버튼
+        // 텍스트를 입력/수정할 때마다 선을 다시 그려주기
+        document.querySelector('.pyramid-container').addEventListener('input', () => {
+             drawLines();
+        });
+
         document.getElementById('resetBtn').addEventListener('click', () => {
             if(confirm('대진표를 진행 이전 상태로 초기화하시겠습니까? (이름은 유지됩니다)')) {
-                // 상위 라운드 비우기
                 document.querySelectorAll('.row:not(.r16) .bubble').forEach(b => {
                     b.className = 'bubble empty';
                     b.innerHTML = '';
                 });
+                drawLines();
             }
         });
 
