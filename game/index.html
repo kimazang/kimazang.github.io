@@ -38,7 +38,7 @@
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: clamp(1.8rem, 4vw, 3rem); /* 반응형 폰트 사이즈 */
             margin-top: 30px;
             margin-bottom: 10px;
             color: #fff;
@@ -50,6 +50,7 @@
                  5px  5px 0 #ff6b8b;
             letter-spacing: 2px;
             animation: bounce 2s infinite ease-in-out;
+            padding: 0 10px;
         }
 
         @keyframes bounce {
@@ -63,15 +64,22 @@
             border: 3px dotted var(--line-color);
             border-radius: 20px;
             margin-bottom: 20px;
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
             line-height: 1.6;
             color: var(--text-color);
             box-shadow: 3px 3px 0px rgba(255, 141, 161, 0.3);
+            width: 90%;
+            max-width: 600px;
+            box-sizing: border-box;
         }
 
         /* 컨트롤 패널 */
         .controls {
             margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
 
         .btn {
@@ -81,11 +89,10 @@
             border: 3px solid var(--line-color);
             border-radius: 30px;
             padding: 10px 25px;
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
             cursor: pointer;
             box-shadow: 4px 4px 0px var(--line-color);
             transition: all 0.1s;
-            margin: 0 5px;
         }
 
         .btn:active {
@@ -97,14 +104,15 @@
             background-color: var(--yellow);
         }
 
-        /* 대진표 영역 */
+        /* 대진표 영역 - 가로 스크롤 방지 및 반응형 적용 */
         .scroll-wrapper {
             width: 100%;
-            max-width: 1400px;
-            overflow-x: auto;
+            max-width: 100vw;
+            overflow-x: hidden; /* 스크롤바 완전 숨김 */
             padding: 20px 0 60px 0;
             display: flex;
             justify-content: center;
+            box-sizing: border-box;
         }
 
         .pyramid-container {
@@ -112,8 +120,9 @@
             display: flex;
             flex-direction: column-reverse; /* 아래부터 위로 (16강 -> 결승) */
             align-items: center;
-            gap: 40px;
-            min-width: 1200px; /* 가로 스크롤 확보 */
+            gap: clamp(20px, 4vw, 40px); /* 화면 크기에 비례하는 간격 */
+            width: 96%; /* 전체 화면 너비 기준 (스크롤 없이 꽉 차게) */
+            max-width: 1200px;
         }
 
         /* 대진 선을 그릴 캔버스 */
@@ -128,24 +137,25 @@
         /* 라운드 및 매치 구조 */
         .row {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between; /* 전체 공간에 고르게 분배 */
             width: 100%;
             z-index: 2;
         }
 
         .match {
             display: flex;
-            gap: 20px;
+            gap: clamp(2px, 1vw, 20px); /* 반응형 갭 */
             position: relative;
             justify-content: center;
+            flex: 1; /* 매치별 간격 동일하게 보장 */
         }
 
-        /* 둥둥 떠다니는 버블 (Y2K 스타일) */
+        /* 둥둥 떠다니는 버블 (Y2K 스타일, 반응형 사이즈 적용) */
         .bubble {
-            width: 75px;
-            height: 75px;
+            width: clamp(30px, 5vw, 75px); /* 최소 30px, 최대 75px로 유연하게 조절 */
+            height: clamp(30px, 5vw, 75px);
             border-radius: 50%;
-            border: 3px solid #fff;
+            border: clamp(1px, 0.3vw, 3px) solid #fff;
             background-color: #f0f0f0; 
             box-shadow: 
                 inset -8px -8px 0px rgba(0,0,0,0.08),
@@ -155,7 +165,7 @@
             align-items: center;
             justify-content: center;
             color: transparent;
-            font-size: 0.95rem;
+            font-size: clamp(0.5rem, 0.8vw, 0.95rem); /* 반응형 폰트 */
             font-weight: bold;
             cursor: pointer;
             position: relative;
@@ -193,7 +203,7 @@
         
         .bubble.empty {
             cursor: default;
-            border: 3px dashed #dcb5bf;
+            border: clamp(1px, 0.3vw, 3px) dashed #dcb5bf;
             background-color: rgba(255,255,255,0.4);
             box-shadow: none;
         }
@@ -246,9 +256,9 @@
 
         /* 우승자 버블 특별 처리 */
         #winner {
-            width: 110px;
-            height: 110px;
-            font-size: 1.3rem;
+            width: clamp(60px, 8vw, 110px);
+            height: clamp(60px, 8vw, 110px);
+            font-size: clamp(0.9rem, 1.2vw, 1.3rem);
             border-width: 4px;
         }
         #winner::after {
