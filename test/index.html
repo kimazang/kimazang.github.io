@@ -266,18 +266,18 @@
             </div>
 
             <!-- Footer & Submit -->
-            <div class="mt-12 text-center pb-8">
+            <div class="mt-12 text-center pb-8 relative">
                 <p class="text-base font-bold mb-1">※ 정답을 제출해 주신 분들께는 추첨을 통해 소정의 선물을 드립니다.</p>
                 <p class="text-sm font-bold mb-8">제출 기한: 2026년 5월 1일 오전 11시</p>
                 
-                <button type="button" id="submitBtn" onclick="submitExam()" class="border-2 border-black px-10 py-3 text-lg font-bold hover:bg-black hover:text-white transition-colors duration-200">
+                <button type="button" id="submitBtn" onclick="submitExam()" class="border-2 border-black px-10 py-3 text-lg font-bold hover:bg-black hover:text-white transition-colors duration-200 z-10 relative">
                     답안지 제출하기
                 </button>
+
+                <!-- 출제자 전용 답안 확인 비밀 버튼 (제출 버튼 바로 밑 투명 영역) -->
+                <button type="button" onclick="openAdminModal()" class="block w-48 h-12 mx-auto mt-2 opacity-0 cursor-default outline-none relative z-10" tabindex="-1"></button>
             </div>
         </form>
-
-        <!-- 출제자 전용 답안 확인 비밀 버튼 (우측 하단 끝 투명 영역) -->
-        <button type="button" onclick="openAdminModal()" class="absolute bottom-0 right-0 w-16 h-16 opacity-0 cursor-default outline-none" tabindex="-1" title=""></button>
     </main>
 
     <!-- Custom Modal for Validation -->
