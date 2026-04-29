@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- [공유용 미리보기 설정 - Open Graph] -->
     <meta property="og:title" content="2026학년도 중간고사 김아장 영역">
     <meta property="og:description" content="만점을 받을 경우, 강제로 혼인신고를 하게 될 수 있습니다.">
     <meta property="og:type" content="website">
-    <!-- 미리보기 이미지 (원하시는 이미지 링크가 있다면 아래 URL을 변경하세요) -->
     <meta property="og:image" content="https://raw.githubusercontent.com/kimazang/kimazang.github.io/main/test/exam.png"> 
 
-    <!-- [파비콘 설정 - 브라우저 탭 아이콘] -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
 
     <title>2026년도 중간고사 김아장영역</title>
@@ -62,11 +59,16 @@
 
         .header-line { border-top: 2px solid #000; border-bottom: 1px solid #000; height: 4px; margin: 1rem 0; }
         .desk-item { position: absolute; z-index: 5; pointer-events: none; filter: drop-shadow(4px 6px 5px rgba(0,0,0,0.4)); }
+        
+        /* placeholder 색상 조정 (선택 사항) */
+        ::placeholder {
+            color: #888;
+            opacity: 1; /* Firefox */
+        }
     </style>
 </head>
 <body>
 
-    <!-- 책상 장식 (화면 해상도와 무관하게 시험지 양옆에 고정되도록 calc() 사용) -->
     <svg class="desk-item hidden lg:block" style="top: 8%; left: calc(50% - 530px); transform: rotate(-15deg); width: 110px;" viewBox="0 0 150 70">
         <rect x="5" y="5" width="140" height="60" rx="3" fill="#fff"/>
         <rect x="50" y="5" width="95" height="60" rx="3" fill="#1e3a8a"/>
@@ -82,9 +84,7 @@
 
     <main class="exam-paper">
         <header class="relative mb-6 sm:mb-8 text-center">
-            <!-- 모바일과 PC 타이틀 반응형 정렬 -->
             <div class="flex flex-col sm:flex-row justify-center items-center sm:items-start min-h-[4rem] sm:min-h-[5rem] gap-3 sm:gap-0 relative">
-                <!-- 모바일에서는 타이틀 위로, PC에서는 좌측 고정 -->
                 <div class="static sm:absolute sm:left-0 sm:top-0 border-[1.5px] border-black rounded-[50%] px-3 py-1 sm:px-4 sm:py-1.5 font-bold text-sm sm:text-lg tracking-widest whitespace-nowrap">제 1 교시</div>
                 
                 <div class="text-center z-10 flex flex-col items-center w-full">
@@ -95,13 +95,12 @@
                 <div class="hidden sm:block absolute right-0 top-0 text-3xl font-bold font-serif pr-2">1</div>
             </div>
 
-            <!-- 응시자 박스 모바일 대응 -->
             <div class="flex justify-center mt-5 sm:mt-6">
                 <table class="border-collapse border-[1.5px] border-black w-full max-w-[280px] sm:max-w-none sm:w-auto">
                     <tr>
                         <td class="border border-black px-3 sm:px-5 py-2 font-bold bg-gray-200 tracking-widest whitespace-nowrap text-sm sm:text-base">응 시 자</td>
                         <td class="border border-black px-2 sm:px-3 py-2 w-full sm:w-48 font-bold text-base sm:text-lg">
-                            <input type="text" id="examinee" class="w-full bg-transparent outline-none text-center">
+                            <input type="text" id="examinee" class="w-full bg-transparent outline-none text-center" placeholder="큐플레이 아카이브 닉네임">
                         </td>
                     </tr>
                 </table>
@@ -110,7 +109,6 @@
         </header>
 
         <form id="examForm">
-            <!-- 문제들 -->
             <div class="question">
                 <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">1. 다음 중 김아장의 본명으로 가장 타당한 것을 고르시오.</h3>
                 <div class="pl-2 sm:pl-4">
@@ -123,12 +121,11 @@
 
             <div class="question">
                 <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">2. 김아장의 ‘진짜’ 성별에 대하여 논리적으로 추론하여 서술하시오.</h3>
-                <textarea id="q2" rows="2" class="exam-textarea w-full"></textarea>
+                <textarea id="q2" rows="2" class="exam-textarea w-full" placeholder="타당한 근거를 들어 서술하시오..."></textarea>
             </div>
 
             <div class="question">
                 <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">3. 다음 중 김아장의 나이에 대한 설명으로 가장 적절한 것을 고르시오.</h3>
-                <!-- 불필요한 space-y-1 클래스 제거하여 간격 통일 -->
                 <div class="pl-2 sm:pl-4">
                     <label class="choice-label"><input type="checkbox" name="q3" value="군필 여고생"><span>① 군필 여고생</span></label>
                     <label class="choice-label"><input type="checkbox" name="q3" value="남자 나이는 크리스마스 케이크"><span>② 남자 나이는 크리스마스 케이크</span></label>
@@ -198,13 +195,11 @@
                 <p class="text-xs sm:text-sm mb-6 sm:mb-8 text-gray-700">제출 기한: 2026년 5월 1일 오전 11시</p>
                 <button type="button" id="submitBtn" onclick="submitExam()" class="border-2 border-black px-8 py-3 sm:px-12 sm:py-4 text-lg sm:text-xl font-bold hover:bg-black hover:text-white transition-all w-full sm:w-auto">답안지 제출하기</button>
                 
-                <!-- 비밀 -->
                 <div onclick="openAdmin()" class="mx-auto w-full max-w-[200px] h-12 mt-2 opacity-0 cursor-default"></div>
             </div>
         </form>
     </main>
 
-    <!-- 모달창들 모바일 최적화 (패딩 조절) -->
     <div id="modal" class="fixed inset-0 bg-black/60 hidden flex items-center justify-center z-[100] p-4">
         <div class="bg-[#ececec] p-6 sm:p-8 border-2 border-black max-w-sm w-full text-center shadow-[6px_6px_0px_#000]">
             <h3 id="mTitle" class="text-xl font-bold mb-4 font-serif">알 림</h3>
