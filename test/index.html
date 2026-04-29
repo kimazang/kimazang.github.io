@@ -17,38 +17,50 @@
     <title>2026년도 중간고사 김아장영역</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');        
         body {
             background-color: #8b5a2b; 
             background-image: repeating-linear-gradient(to right, rgba(0,0,0,0.05) 0 2px, transparent 2px 15px),
                               repeating-linear-gradient(to bottom, rgba(0,0,0,0.05) 0 2px, transparent 2px 15px);
-            padding: 3rem 1rem;
+            /* 모바일에서는 패딩을 줄여서 꽉 차게 */
+            padding: 1rem 0.5rem; 
             display: flex;
             justify-content: center;
             position: relative;
             min-height: 100vh;
         }
         
+        @media (min-width: 640px) {
+            body { padding: 3rem 1rem; }
+        }
+
         .exam-paper {
             background-color: #ececec;
             color: #000;
             font-family: 'Batang', 'BatangChe', 'Nanum Myeongjo', serif;
             max-width: 850px;
             width: 100%;
-            padding: 3rem 2.5rem;
+            /* 모바일 패딩 축소 */
+            padding: 2rem 1.5rem;
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
             position: relative;
             z-index: 10;
         }
 
+        @media (min-width: 640px) {
+            .exam-paper { padding: 3rem 2.5rem; }
+        }
+
         .exam-input { border: none; border-bottom: 1.5px dashed #333; background: transparent; outline: none; padding: 0.2rem 0.5rem; font-family: inherit; }
         .exam-textarea { border: 1px solid #555; background: transparent; outline: none; font-family: inherit; resize: none; padding: 0.5rem; }
         .question { margin-bottom: 2.5rem; line-height: 1.6; }
-        .choice-label { display: flex; align-items: flex-start; gap: 0.5rem; cursor: pointer; margin-bottom: 0.5rem; }
-        .choice-label input { margin-top: 0.4rem; accent-color: #000; width: 1.1rem; height: 1.1rem; }
-        .header-line { border-top: 2px solid #000; border-bottom: 1px solid #000; height: 4px; margin: 1rem 0; }
         
+        /* 보기 줄바꿈 최적화 */
+        .choice-label { display: flex; align-items: flex-start; gap: 0.5rem; cursor: pointer; margin-bottom: 0.5rem; }
+        .choice-label input { margin-top: 0.4rem; accent-color: #000; width: 1.1rem; height: 1.1rem; flex-shrink: 0; }
+        .choice-label span { word-break: keep-all; line-height: 1.5; }
+
+        .header-line { border-top: 2px solid #000; border-bottom: 1px solid #000; height: 4px; margin: 1rem 0; }
         .desk-item { position: absolute; z-index: 5; pointer-events: none; filter: drop-shadow(4px 6px 5px rgba(0,0,0,0.4)); }
     </style>
 </head>
@@ -59,36 +71,39 @@
     <svg class="desk-item hidden lg:block" style="bottom: 10%; right: 5%; transform: rotate(20deg); width: 50px;" viewBox="0 0 100 500"><polygon points="20,100 80,100 80,450 20,450" fill="#eab308"/><polygon points="20,100 50,20 80,100" fill="#fed7aa"/><polygon points="42,42 50,20 58,42" fill="#333"/><rect x="20" y="450" width="60" height="20" fill="#9ca3af"/><rect x="20" y="470" width="60" height="30" rx="5" fill="#f472b6"/></svg>
 
     <main class="exam-paper">
-        <header class="relative mb-8 text-center">
-            <!-- 절대 좌표를 이용한 완벽한 가운데 정렬 -->
-            <div class="relative flex justify-center items-start min-h-[5rem]">
-                <div class="absolute left-0 top-0 border-[1.5px] border-black rounded-[50%] px-4 py-1.5 font-bold text-lg tracking-widest whitespace-nowrap">제 1 교시</div>
+        <header class="relative mb-6 sm:mb-8 text-center">
+            <!-- 모바일과 PC 타이틀 반응형 정렬 -->
+            <div class="flex flex-col sm:flex-row justify-center items-center sm:items-start min-h-[4rem] sm:min-h-[5rem] gap-3 sm:gap-0 relative">
+                <!-- 모바일에서는 타이틀 위로, PC에서는 좌측 고정 -->
+                <div class="static sm:absolute sm:left-0 sm:top-0 border-[1.5px] border-black rounded-[50%] px-3 py-1 sm:px-4 sm:py-1.5 font-bold text-sm sm:text-lg tracking-widest whitespace-nowrap">제 1 교시</div>
                 
-                <div class="text-center z-10 flex flex-col items-center">
-                    <h2 class="text-xl font-bold tracking-[0.1em] mb-1">2026학년도 중간고사 문제지</h2>
-                    <h1 class="text-5xl font-extrabold tracking-[0.2em] border-b-2 border-black inline-block pb-1 px-4">김아장 영역</h1>
+                <div class="text-center z-10 flex flex-col items-center w-full">
+                    <h2 class="text-base sm:text-xl font-bold tracking-[0.1em] mb-1">2026학년도 중간고사 문제지</h2>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-[0.2em] border-b-2 border-black inline-block pb-1 px-2 sm:px-4 break-keep">김아장 영역</h1>
                 </div>
 
-                <div class="absolute right-0 top-0 text-3xl font-bold font-serif pr-2">1</div>
+                <div class="hidden sm:block absolute right-0 top-0 text-3xl font-bold font-serif pr-2">1</div>
             </div>
 
-            <!-- 응시자 박스 가운데 정렬 -->
-            <div class="flex justify-center mt-6">
-                <table class="border-collapse border-[1.5px] border-black">
+            <!-- 응시자 박스 모바일 대응 -->
+            <div class="flex justify-center mt-5 sm:mt-6">
+                <table class="border-collapse border-[1.5px] border-black w-full max-w-[280px] sm:max-w-none sm:w-auto">
                     <tr>
-                        <td class="border border-black px-5 py-2 font-bold bg-gray-200 tracking-widest whitespace-nowrap">응 시 자</td>
-                        <td class="border border-black px-3 py-2 w-48 font-bold text-lg"><input type="text" id="examinee" class="w-full bg-transparent outline-none text-center"></td>
+                        <td class="border border-black px-3 sm:px-5 py-2 font-bold bg-gray-200 tracking-widest whitespace-nowrap text-sm sm:text-base">응 시 자</td>
+                        <td class="border border-black px-2 sm:px-3 py-2 w-full sm:w-48 font-bold text-base sm:text-lg">
+                            <input type="text" id="examinee" class="w-full bg-transparent outline-none text-center">
+                        </td>
                     </tr>
                 </table>
             </div>
-            <div class="header-line"></div>
+            <div class="header-line mt-5 sm:mt-6"></div>
         </header>
 
         <form id="examForm">
             <!-- 문제들 -->
             <div class="question">
-                <h3 class="text-lg font-bold mb-3">1. 다음 중 김아장의 본명으로 가장 타당한 것을 고르시오.</h3>
-                <div class="pl-4">
+                <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">1. 다음 중 김아장의 본명으로 가장 타당한 것을 고르시오.</h3>
+                <div class="pl-2 sm:pl-4">
                     <label class="choice-label"><input type="checkbox" name="q1" value="진짜 김아장임"><span>① 진짜 김아장임</span></label>
                     <label class="choice-label"><input type="checkbox" name="q1" value="일단 김씨는 맞음"><span>② 일단 김씨는 맞음</span></label>
                     <label class="choice-label"><input type="checkbox" name="q1" value="절대 김씨가 아님"><span>③ 절대 김씨가 아님</span></label>
@@ -97,13 +112,13 @@
             </div>
 
             <div class="question">
-                <h3 class="text-lg font-bold mb-3">2. 김아장의 ‘진짜’ 성별에 대하여 논리적으로 추론하시오.</h3>
+                <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">2. 김아장의 ‘진짜’ 성별에 대하여 논리적으로 추론하시오.</h3>
                 <textarea id="q2" rows="2" class="exam-textarea w-full"></textarea>
             </div>
 
             <div class="question">
-                <h3 class="text-lg font-bold mb-3">3. 다음 중 김아장의 나이에 대한 설명으로 가장 적절한 것을 고르시오.</h3>
-                <div class="pl-4 space-y-1">
+                <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">3. 다음 중 김아장의 나이에 대한 설명으로 가장 적절한 것을 고르시오.</h3>
+                <div class="pl-2 sm:pl-4 space-y-1">
                     <label class="choice-label"><input type="checkbox" name="q3" value="군필 여고생"><span>① 군필 여고생</span></label>
                     <label class="choice-label"><input type="checkbox" name="q3" value="남자 나이는 크리스마스 케이크"><span>② 남자 나이는 크리스마스 케이크</span></label>
                     <label class="choice-label"><input type="checkbox" name="q3" value="내 동년배들 다 큐플레이를 했다"><span>③ 내 동년배들 다 큐플레이를 했다</span></label>
@@ -112,13 +127,16 @@
             </div>
 
             <div class="question">
-                <h3 class="text-lg font-bold mb-3">4. 김아장의 생일을 엄격, 근엄, 진지하게 조사하여 작성하시오.</h3>
-                <div class="pl-4"><input type="number" id="q4_m" class="exam-input w-12 text-center"> 월 <input type="number" id="q4_d" class="exam-input w-12 text-center ml-2"> 일</div>
+                <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">4. 김아장의 생일을 엄격, 근엄, 진지하게 조사하여 작성하시오.</h3>
+                <div class="pl-2 sm:pl-4 flex items-center">
+                    <input type="number" id="q4_m" class="exam-input w-12 sm:w-16 text-center"> <span class="mx-1 font-bold">월</span> 
+                    <input type="number" id="q4_d" class="exam-input w-12 sm:w-16 text-center ml-2"> <span class="mx-1 font-bold">일</span>
+                </div>
             </div>
 
             <div class="question">
-                <h3 class="text-lg font-bold mb-3">5. 다음 중 김아장의 직업을 모두 고르시오. (복수 정답 가능)</h3>
-                <div class="pl-4">
+                <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">5. 다음 중 김아장의 직업을 모두 고르시오. (복수 정답 가능)</h3>
+                <div class="pl-2 sm:pl-4">
                     <label class="choice-label"><input type="checkbox" name="q5" value="자택 경비원"><span>① 자택 경비원</span></label>
                     <label class="choice-label"><input type="checkbox" name="q5" value="전업 자녀"><span>② 전업 자녀</span></label>
                     <label class="choice-label"><input type="checkbox" name="q5" value="온리팬스 모델"><span>③ 온리팬스 모델</span></label>
@@ -126,24 +144,33 @@
                 </div>
             </div>
 
+            <!-- 유명인 입력란 반응형 (flex-1로 넓게) -->
             <div class="question">
-                <h3 class="text-lg font-bold mb-3">6. 김아장이 좋아하는 여성 유명인 3명을 작성하시오.</h3>
-                <div class="pl-4 space-y-2">1. <input type="text" id="q6_1" class="exam-input"> 2. <input type="text" id="q6_2" class="exam-input"> 3. <input type="text" id="q6_3" class="exam-input"></div>
+                <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">6. 김아장이 좋아하는 여성 유명인 3명을 작성하시오.</h3>
+                <div class="pl-2 sm:pl-4 space-y-3">
+                    <div class="flex items-center font-bold"><span class="mr-2">1.</span><input type="text" id="q6_1" class="exam-input flex-1"></div>
+                    <div class="flex items-center font-bold"><span class="mr-2">2.</span><input type="text" id="q6_2" class="exam-input flex-1"></div>
+                    <div class="flex items-center font-bold"><span class="mr-2">3.</span><input type="text" id="q6_3" class="exam-input flex-1"></div>
+                </div>
             </div>
 
             <div class="question">
-                <h3 class="text-lg font-bold mb-3">7. 김아장이 좋아하는 남성 유명인 3명을 작성하시오.</h3>
-                <div class="pl-4 space-y-2">1. <input type="text" id="q7_1" class="exam-input"> 2. <input type="text" id="q7_2" class="exam-input"> 3. <input type="text" id="q7_3" class="exam-input"></div>
+                <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">7. 김아장이 좋아하는 남성 유명인 3명을 작성하시오.</h3>
+                <div class="pl-2 sm:pl-4 space-y-3">
+                    <div class="flex items-center font-bold"><span class="mr-2">1.</span><input type="text" id="q7_1" class="exam-input flex-1"></div>
+                    <div class="flex items-center font-bold"><span class="mr-2">2.</span><input type="text" id="q7_2" class="exam-input flex-1"></div>
+                    <div class="flex items-center font-bold"><span class="mr-2">3.</span><input type="text" id="q7_3" class="exam-input flex-1"></div>
+                </div>
             </div>
 
             <div class="question">
-                <h3 class="text-lg font-bold mb-3">8. 김아장의 평상시 모습을 분석하여 MBTI를 추론하시오.</h3>
-                <div class="pl-4"><input type="text" id="q8" class="exam-input w-32 text-center uppercase font-bold tracking-widest" maxlength="4" placeholder="____"></div>
+                <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">8. 김아장의 평상시 모습을 분석하여 MBTI를 추론하시오.</h3>
+                <div class="pl-2 sm:pl-4"><input type="text" id="q8" class="exam-input w-28 sm:w-32 text-center uppercase font-bold tracking-widest" maxlength="4" placeholder="____"></div>
             </div>
 
             <div class="question">
-                <h3 class="text-lg font-bold mb-3">9. 김아장이 큐플레이 아카이브를 접는 순간을 고르시오.</h3>
-                <div class="pl-4">
+                <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">9. 김아장이 큐플레이 아카이브를 접는 순간을 고르시오.</h3>
+                <div class="pl-2 sm:pl-4">
                     <label class="choice-label"><input type="checkbox" name="q9" value="멘헤라 큐앤이 같이 접자고 할 때"><span>① 멘헤라 큐앤이 같이 접자고 할 때</span></label>
                     <label class="choice-label"><input type="checkbox" name="q9" value="좋아하는 유저들이 모두 접을 때"><span>② 좋아하는 유저들이 모두 접을 때</span></label>
                     <label class="choice-label"><input type="checkbox" name="q9" value="본인에 대한 사생활 폭로와 저격이 이어질 때"><span>③ 본인에 대한 사생활 폭로와 저격이 이어질 때</span></label>
@@ -152,36 +179,37 @@
             </div>
 
             <div class="question">
-                <h3 class="text-lg font-bold mb-3">10. ‘나에게 김아장이란 무엇인가’에 대하여 서술하시오.</h3>
+                <h3 class="text-base sm:text-lg font-bold mb-3 break-keep">10. ‘나에게 김아장이란 무엇인가’에 대하여 서술하시오.</h3>
                 <textarea id="q10" rows="4" class="exam-textarea w-full" placeholder="진심을 담아 작성하시오..."></textarea>
             </div>
 
-            <div class="mt-12 text-center relative">
-                <p class="font-bold mb-1">※ 정답을 제출해 주신 분들께는 추첨을 통해 소정의 선물을 드립니다.</p>
-                <p class="text-sm mb-8">제출 기한: 2026년 5월 1일 오전 11시</p>
-                <button type="button" id="submitBtn" onclick="submitExam()" class="border-2 border-black px-12 py-4 text-xl font-bold hover:bg-black hover:text-white transition-all">답안지 제출하기</button>
+            <div class="mt-8 sm:mt-12 text-center relative">
+                <p class="font-bold mb-1 text-sm sm:text-base">※ 정답을 제출해 주신 분들께는 추첨을 통해 소정의 선물을 드립니다.</p>
+                <p class="text-xs sm:text-sm mb-6 sm:mb-8 text-gray-700">제출 기한: 2026년 5월 1일 오전 11시</p>
+                <button type="button" id="submitBtn" onclick="submitExam()" class="border-2 border-black px-8 py-3 sm:px-12 sm:py-4 text-lg sm:text-xl font-bold hover:bg-black hover:text-white transition-all w-full sm:w-auto">답안지 제출하기</button>
                 
                 <!-- 제출 버튼 바로 아래 비밀 버튼 영역 -->
-                <div onclick="openAdmin()" class="mx-auto w-48 h-10 mt-2 opacity-0 cursor-default"></div>
+                <div onclick="openAdmin()" class="mx-auto w-full max-w-[200px] h-12 mt-2 opacity-0 cursor-default"></div>
             </div>
         </form>
     </main>
 
+    <!-- 모달창들 모바일 최적화 (패딩 조절) -->
     <div id="modal" class="fixed inset-0 bg-black/60 hidden flex items-center justify-center z-[100] p-4">
-        <div class="bg-[#ececec] p-8 border-2 border-black max-w-sm w-full text-center shadow-[6px_6px_0px_#000]">
+        <div class="bg-[#ececec] p-6 sm:p-8 border-2 border-black max-w-sm w-full text-center shadow-[6px_6px_0px_#000]">
             <h3 id="mTitle" class="text-xl font-bold mb-4 font-serif">알 림</h3>
-            <p id="mMsg" class="mb-6 break-keep font-bold"></p>
-            <button onclick="closeModal()" class="border-2 border-black px-8 py-1 font-bold hover:bg-black/10">확인</button>
+            <p id="mMsg" class="mb-6 break-keep font-bold text-sm sm:text-base"></p>
+            <button onclick="closeModal()" class="border-2 border-black px-6 sm:px-8 py-1.5 font-bold hover:bg-black/10">확인</button>
         </div>
     </div>
 
-    <div id="adminModal" class="fixed inset-0 bg-black/80 hidden flex items-center justify-center z-[200] p-4">
-        <div class="bg-[#ececec] p-6 border-2 border-black max-w-2xl w-full h-[85vh] flex flex-col shadow-[8px_8px_0px_#000]">
-            <div class="flex justify-between border-b-2 border-black pb-2 mb-4">
-                <h3 class="text-xl font-bold font-serif">제출된 답안 목록</h3>
-                <button onclick="document.getElementById('adminModal').classList.add('hidden')" class="text-2xl font-bold">&times;</button>
+    <div id="adminModal" class="fixed inset-0 bg-black/80 hidden flex items-center justify-center z-[200] p-2 sm:p-4">
+        <div class="bg-[#ececec] p-4 sm:p-6 border-2 border-black max-w-2xl w-full h-[90vh] sm:h-[85vh] flex flex-col shadow-[8px_8px_0px_#000]">
+            <div class="flex justify-between items-center border-b-2 border-black pb-2 mb-3 sm:mb-4">
+                <h3 class="text-lg sm:text-xl font-bold font-serif">제출된 답안 목록</h3>
+                <button onclick="document.getElementById('adminModal').classList.add('hidden')" class="text-2xl font-bold px-2">&times;</button>
             </div>
-            <div id="adminList" class="flex-1 overflow-y-auto space-y-4 pr-2"></div>
+            <div id="adminList" class="flex-1 overflow-y-auto space-y-3 sm:space-y-4 pr-1 sm:pr-2"></div>
         </div>
     </div>
 
@@ -190,7 +218,7 @@
         import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
         import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-        // 아장님이 제공해주신 Firebase 설정값 적용
+        // Firebase 설정
         const firebaseConfig = {
             apiKey: "AIzaSyCtxmAlRc0zF2YQNTPzAZR9WGAOr5V1dOs",
             authDomain: "test-d5f65.firebaseapp.com",
@@ -225,12 +253,16 @@
                 let h = "";
                 snap.forEach(doc => {
                     const d = doc.data();
-                    h += `<div class="border-2 border-black p-4 bg-white shadow-sm">
-                        <p class="font-bold border-b pb-1 mb-2">${d.name} (${d.time.split('T')[0]})</p>
-                        <div class="text-xs space-y-1 text-gray-700">
-                            <p>1:${d.q1} | 2:${d.q2} | 3:${d.q3} | 4:${d.q4}</p>
-                            <p>5:${d.q5} | 8:${d.q8} | 9:${d.q9}</p>
-                            <p class="bg-gray-50 p-1 mt-1 border">10:${d.q10}</p>
+                    h += `<div class="border-2 border-black p-3 sm:p-4 bg-white shadow-sm">
+                        <p class="font-bold border-b pb-1 mb-2 text-sm sm:text-base">${d.name} <span class="text-xs text-gray-500">(${d.time.split('T')[0]})</span></p>
+                        <div class="text-xs sm:text-sm space-y-1 sm:space-y-1.5 text-gray-700">
+                            <p>1:${d.q1} | 2:${d.q2}</p>
+                            <p>3:${d.q3} | 4:${d.q4}</p>
+                            <p>5:${d.q5}</p>
+                            <p>6:${d.q6}</p>
+                            <p>7:${d.q7}</p>
+                            <p>8:${d.q8} | 9:${d.q9}</p>
+                            <p class="bg-gray-50 p-1.5 mt-1 border break-words">10:${d.q10}</p>
                         </div>
                     </div>`;
                 });
@@ -248,8 +280,8 @@
             const m=document.getElementById('q4_m').value, d=document.getElementById('q4_d').value;
             const q4 = (m && d) ? `${m}월 ${d}일` : "";
             const q5 = [...document.querySelectorAll('input[name="q5"]:checked')].map(v=>v.value).join(',');
-            const q6 = [1,2,3].map(i=>document.getElementById('q6_'+i).value.trim()).filter(v=>v).join('/');
-            const q7 = [1,2,3].map(i=>document.getElementById('q7_'+i).value.trim()).filter(v=>v).join('/');
+            const q6 = [1,2,3].map(i=>document.getElementById('q6_'+i).value.trim()).filter(v=>v).join(', ');
+            const q7 = [1,2,3].map(i=>document.getElementById('q7_'+i).value.trim()).filter(v=>v).join(', ');
             const q8 = document.getElementById('q8').value.trim();
             const q10 = document.getElementById('q10').value.trim();
 
@@ -279,4 +311,5 @@
         }
     </script>
 </body>
+</html>
 </html>
