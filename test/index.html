@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제1회 김아장고사 문제지</title>
+    
+    <!-- [공유용 미리보기 설정 - Open Graph] -->
+    <meta property="og:title" content="2026학년도 중간고사 김아장 영역">
+    <meta property="og:description" content="만점을 받을 경우, 강제로 혼인신고를 하게 될 수 있습니다.">
+    <meta property="og:type" content="website">
+    <!-- 미리보기 이미지 (원하시는 이미지 링크가 있다면 아래 URL을 변경하세요) -->
+    <meta property="og:image" content="https://raw.githubusercontent.com/kimazang/kimazang.github.io/main/test/exam.png"> 
+
+    <!-- [파비콘 설정 - 브라우저 탭 아이콘] -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+
+    <title>2026년도 중간고사 김아장영역</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
@@ -22,7 +33,7 @@
         .exam-paper {
             background-color: #ececec;
             color: #000;
-            font-family: 'Batang', 'Nanum Myeongjo', serif;
+            font-family: 'Batang', 'BatangChe', 'Nanum Myeongjo', serif;
             max-width: 850px;
             width: 100%;
             padding: 3rem 2.5rem;
@@ -43,23 +54,29 @@
 </head>
 <body>
 
+    <!-- 책상 장식 -->
     <svg class="desk-item hidden lg:block" style="top: 10%; left: 5%; transform: rotate(-15deg); width: 100px;" viewBox="0 0 150 70"><rect x="5" y="5" width="140" height="60" rx="3" fill="#fff"/><rect x="50" y="5" width="95" height="60" rx="3" fill="#1e3a8a"/><text x="70" y="42" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff">ERASER</text></svg>
     <svg class="desk-item hidden lg:block" style="bottom: 10%; right: 5%; transform: rotate(20deg); width: 50px;" viewBox="0 0 100 500"><polygon points="20,100 80,100 80,450 20,450" fill="#eab308"/><polygon points="20,100 50,20 80,100" fill="#fed7aa"/><polygon points="42,42 50,20 58,42" fill="#333"/><rect x="20" y="450" width="60" height="20" fill="#9ca3af"/><rect x="20" y="470" width="60" height="30" rx="5" fill="#f472b6"/></svg>
 
     <main class="exam-paper">
         <header class="relative mb-8 text-center">
-            <div class="flex justify-between items-start">
-                <div class="border-[1.5px] border-black rounded-[50%] px-4 py-1 font-bold text-lg">제 1 교시</div>
-                <div>
-                    <h2 class="text-xl font-bold tracking-widest">2026학년도 중간고사 문제지</h2>
-                    <h1 class="text-5xl font-extrabold tracking-widest border-b-2 border-black inline-block pb-1">김아장 영역</h1>
+            <!-- 절대 좌표를 이용한 완벽한 가운데 정렬 -->
+            <div class="relative flex justify-center items-start min-h-[5rem]">
+                <div class="absolute left-0 top-0 border-[1.5px] border-black rounded-[50%] px-4 py-1.5 font-bold text-lg tracking-widest whitespace-nowrap">제 1 교시</div>
+                
+                <div class="text-center z-10 flex flex-col items-center">
+                    <h2 class="text-xl font-bold tracking-[0.1em] mb-1">2026학년도 중간고사 문제지</h2>
+                    <h1 class="text-5xl font-extrabold tracking-[0.2em] border-b-2 border-black inline-block pb-1 px-4">김아장 영역</h1>
                 </div>
-                <div class="text-3xl font-bold">1</div>
+
+                <div class="absolute right-0 top-0 text-3xl font-bold font-serif pr-2">1</div>
             </div>
+
+            <!-- 응시자 박스 가운데 정렬 -->
             <div class="flex justify-center mt-6">
                 <table class="border-collapse border-[1.5px] border-black">
                     <tr>
-                        <td class="border border-black px-5 py-2 font-bold bg-gray-200">응 시 자</td>
+                        <td class="border border-black px-5 py-2 font-bold bg-gray-200 tracking-widest whitespace-nowrap">응 시 자</td>
                         <td class="border border-black px-3 py-2 w-48 font-bold text-lg"><input type="text" id="examinee" class="w-full bg-transparent outline-none text-center"></td>
                     </tr>
                 </table>
@@ -68,6 +85,7 @@
         </header>
 
         <form id="examForm">
+            <!-- 문제들 -->
             <div class="question">
                 <h3 class="text-lg font-bold mb-3">1. 다음 중 김아장의 본명으로 가장 타당한 것을 고르시오.</h3>
                 <div class="pl-4">
