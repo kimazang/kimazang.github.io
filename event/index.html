@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 검색 노출 및 카카오톡/디스코드 공유 시 미리보기 정보 (Open Graph) -->
+    <meta name="description" content="메이플스토리 월드 2주년 이벤트 큐플레이 아카이브 족보 검색기">
+    <meta property="og:title" content="메이플스토리 월드 2주년 이벤트 족보">
+    <meta property="og:description" content="이벤트 기한: 2026.04.30(목) 11:00 ~ 2026.05.07(목) 10:59">
+    <!-- 아래 content 부분에 원하시는 미리보기 이미지의 파일명이나 링크를 넣어주세요 -->
+    <meta property="og:image" content="https://kimazang.github.io/qp_logo.png"> 
+    <meta property="og:type" content="website">
+    
+    <!-- 웹 브라우저 탭에 표시되는 파비콘 이미지 설정 -->
+    <!-- 아래 href 부분에 원하시는 파비콘 이미지의 파일명이나 링크를 넣어주세요 -->
+    <link rel="icon" href="https://kimazang.github.io/qp_favicon.png" type="image/png"> 
+    
+    <title>메이플스토리 월드 2주년 이벤트 족보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <style>
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            background-color: #f8fafc;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* 스크롤바 커스텀 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+    <div class="container mx-auto px-4 py-10 max-w-2xl flex flex-col items-center">
+        
+        <!-- 헤더 영역 -->
+        <div class="text-center w-full mb-8 mt-4">
+            <div class="inline-flex items-center justify-center space-x-1 bg-orange-100 text-orange-600 px-3 py-1.5 rounded-full text-sm font-bold mb-3 shadow-sm">
+                <span>📚 큐플레이 아카이브</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">
+                메이플스토리 월드 <span class="text-orange-500">2주년 족보</span>
+            </h1>
+        </div>
+
+        <!-- 안내 영역 -->
+        <div class="w-full bg-white rounded-2xl p-6 mb-8 border border-gray-200 shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 보상 안내 -->
+                <div>
+                    <h3 class="font-bold text-[1.1rem] text-gray-800 mb-2 flex items-center gap-1.5">
+                        <span class="text-xl">🎁</span> 이벤트 보상 안내
+                    </h3>
+                    <ul class="text-sm text-gray-600 space-y-1.5 pl-7 list-disc marker:text-gray-300">
+                        <li>메이플스토리 월드 <strong class="text-orange-500">'월드코인' 200개</strong></li>
+                        <li>큐플레이 아카이브 <strong class="text-orange-500">성형쿠폰</strong><br><span class="text-xs text-gray-400">(수령 후 유효기간 7일)</span></li>
+                    </ul>
+                </div>
+                <!-- 문의 안내 -->
+                <div>
+                    <h3 class="font-bold text-[1.1rem] text-gray-800 mb-2 flex items-center gap-1.5">
+                        <span class="text-xl">💡</span> 문제 오류 및 제보
+                    </h3>
+                    <div class="text-sm text-gray-600 pl-7 space-y-1.5">
+                        <p>Discord <strong class="text-gray-800 bg-gray-100 px-1.5 py-0.5 rounded">@kimazang</strong></p>
+                        <p>인게임 <strong class="text-gray-800 bg-gray-100 px-1.5 py-0.5 rounded">큐플레이 아카이브 [아장]</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 검색 영역 -->
+        <div class="w-full relative mb-4">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <input type="text" id="searchInput" placeholder="문제의 일부를 검색하세요 (띄어쓰기 무시)" 
+                   class="w-full pl-12 pr-6 py-4 rounded-xl border-2 border-gray-200 shadow-sm text-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-4 focus:ring-orange-100 transition-all bg-white">
+        </div>
+        
+        <div class="w-full flex justify-between items-center mb-4 px-2 text-gray-500 font-medium text-sm">
+            <span>총 <span id="resultCount" class="text-orange-500 font-bold text-base mx-1">0</span>개의 족보가 있습니다.</span>
+        </div>
+
+        <!-- 결과 목록 영역 -->
+        <div id="resultList" class="w-full flex flex-col gap-5 pb-20">
+            <!-- 자바스크립트로 내용이 렌더링됩니다 -->
+        </div>
+
+    </div>
+
+    <script>
+        // 족보 데이터
+        const qnaData = [
+            { q: "메이플스토리월드 프리미엄 PC방 혜택이 아닌 것은?", a: "기간 누적 접속 시간은 계정당 일 최대 20시간까지 누적된다." },
+            { q: "메이플스토리 월드의 현금재화를 가리키는 말은?", a: "월드 코인" },
+            { q: "메이플스토리 월드 홈페이지에서 접속 가능한 개발자를 위한 개발 자료가 있는 곳은?", a: "크리에이터 센터" },
+            { q: "메이플스토리 월드 게임 중 듀랑고를 활용한 게임의 부제목으로 올바른 것은?", a: "잃어버린 섬" },
+            { q: "메이플스토리 월드의 크리에이터 지원 프로그램은?", a: "Next" },
+            { q: "메이플스토리 월드 클라이언트의 Windows 최소사양으로 올바르지 않은 것은?", a: "메모리 12GB" },
+            { q: "메이플스토리 월드의 정식명칭이 정해지기 전 메이플스토리 월드의 이름은?", a: "Project MOD" },
+            { q: "메이플스토리 월드 오리지널 게임이 아닌 것은?", a: "메이플 몬스터 배틀!" },
+            { q: "메이플스토리 IP를 활용하여 제작된 게임이 아닌 것은?", a: "QPlay Archive" },
+            { q: "메이플스토리 월드에서 사용할 수 있는 IP가 아닌 것은?", a: "던전앤파이터" },
+            { q: "메이플스토리 월드 게임이 아닌 것은?", a: "블루 아카이브" },
+            { q: "크리에이터들이 메이플스토리 월드에서 코딩할 때 사용하는 언어로 올바른 것은?", a: "lua" },
+            { q: "메이플스토리 월드의 프로그램 기반 엔진은?", a: "유니티 엔진" },
+            { q: "유명 유튜버 테스터훈이 제작에 참여한 월드는?", a: "단풍의 전설" },
+            { q: "옛날 메이플스토리 기반으로 제작된 게임이 아닌 것은?", a: "메이플 슬래시" },
+            { q: "2026년 4월 25일은 메이플스토리 월드의 정식런칭 몇주년 일까요?", a: "2" },
+            { q: "큐플레이 IP를 활용하여 제작된 게임이 아닌 것은?", a: "아르테일" },
+            { q: "메이플스토리 월드 Next크리에이터의 지원 자격이 아닌 것은?", a: "출시 이후 누적 접속자 10k가 넘은 크리에이터" },
+            { q: "메이플스토리 원작 리소스 사용이 허용되는 범위는?", a: "5차 전직 이전 리소스" },
+            { q: "사용자가 직접 게임을 제작하고 다른 유저들과 공유하여 즐기는 게임 플랫폼이 아닌 것은?", a: "아크 레이더스" },
+            { q: "구버전 기반의 프로젝트로 현재 알파 서비스 중인 월드는?", a: "Chrono Story" },
+            { q: "메이플스토리 월드가 지원하는 os가 아닌 것은?", a: "Tizen" },
+            { q: "메이플스토리 월드 파트너스 그룹 Corze의 게임이 아닌 것은?", a: "메이플 왕국 키우기" },
+            { q: "메이플스토리 월드 파트너스 자유단풍잎 크리에이터의 게임이 아닌 것은?", a: "메이플 더 슬레이어" },
+            { q: "메이플스토리 월드의 유명월드 Mapleland의 월드가 아닌 것은?", a: "Mapleland (해외)" },
+            { q: "메이플스토리 월드 게임이 아닌 것은?", a: "슈의 라면가게" },
+            { q: "메이플스토리 월드 홈페이지에서 쇼츠형식으로 출시된 월드를 볼 수 있는 탭 이름은?", a: "하이라이트" },
+            { q: "메이플스토리 월드에서 즐길 수 있는 게임으로 4대 1 술래잡기 게임인 이 게임의 이름은?", a: "슈피겔만 게임" },
+            { q: "메이플스토리 월드를 운영중인 회사의 이름은?", a: "토벤 스튜디오" },
+            { q: "메이플스토리 월드 게임 중 로그라이크 방식의 게임으로 접속자수 200k를 넘은 게임은?", a: "사우스페리" },
+            { q: "메이플스토리 태블릿 최소사양", a: "갤럭시탭 S3" },
+            { q: "메이플스토리 월드 오리지날 게임으로 여러 카드로 카드 대전을 하는 게임의 이름은?", a: "메이플 듀얼" },
+            { q: "메이플스토리 월드에서 바람의나라 원작과 비슷한 월드를 만들 경우 허용되는 리소스 범위는?", a: "Ver 5. 50" },
+            { q: "메이플스토리 월드의 웹사이트 주소는?", a: "maplestoryworlds.nexon.com" },
+            { q: "메이플스토리 월드 월드 언어 설정에서 설정할 수 없는 언어는?", a: "독일어" },
+            { q: "메이플스토리 월드의 디렉터의 이름은?", a: "신민석" },
+            { q: "큐플레이 아카이브 QPlay Archive 채널이 아닌 것은?", a: "이벤트" },
+            { q: "시행하고 있는 어쩌구 저쩌구", a: "실험실" },
+            { q: "메이플스토리 월드 플레이 할 수 없는 환경 어쩌구저쩌구", a: "닌텐도" },
+            { q: "메이플스토리 월드 게임 중 빅뱅패치 이후 버전을 기반으로 개발된 게임은?", a: "메이플 스타" }
+        ];
+
+        const inputEl = document.getElementById('searchInput');
+        const resultEl = document.getElementById('resultList');
+        const countEl = document.getElementById('resultCount');
+
+        // 리스트 렌더링 함수
+        function renderList(list) {
+            countEl.textContent = list.length;
+
+            if (list.length === 0) {
+                resultEl.innerHTML = `
+                    <div class="bg-white rounded-2xl p-10 text-center border border-gray-200 shadow-sm mt-2">
+                        <div class="text-4xl mb-3">😢</div>
+                        <h3 class="text-lg text-gray-800 font-bold">검색 결과가 없습니다.</h3>
+                        <p class="text-gray-500 mt-1 text-sm">다른 단어로 검색해 보세요.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const html = list.map(item => `
+                <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-shadow cursor-default">
+                    <div class="flex items-start gap-3 mb-3">
+                        <span class="flex-shrink-0 w-7 h-7 flex items-center justify-center bg-gray-100 text-gray-500 rounded-full text-sm font-bold mt-0.5">Q</span>
+                        <div class="text-gray-800 font-medium text-lg leading-snug break-keep">
+                            ${item.q}
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-blue-50/50 p-4 rounded-xl">
+                        <span class="flex-shrink-0 w-7 h-7 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full text-sm font-bold mt-0.5">A</span>
+                        <div class="text-blue-600 font-bold text-xl leading-snug break-keep">
+                            ${item.a}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            resultEl.innerHTML = html;
+        }
+
+        // 검색 이벤트 리스너
+        inputEl.addEventListener('input', (e) => {
+            // 사용자의 입력을 소문자로 변환하고 모든 공백 제거
+            const rawSearchTerm = e.target.value.toLowerCase().replace(/\s+/g, '');
+            
+            if (!rawSearchTerm) {
+                renderList(qnaData); // 입력창이 비어있으면 전체 리스트 표시
+                return;
+            }
+            
+            // 핵심 기능: 입력한 글자들 사이에 '.*' 정규식을 삽입하여 중간 글자가 생략되어도 순서만 맞으면 찾아냄
+            // 예: "프리미엄아닌것" -> /프.*리.*미.*엄.*아.*닌.*것/
+            const regexPattern = rawSearchTerm.split('').join('.*');
+            const regex = new RegExp(regexPattern);
+            
+            const filtered = qnaData.filter(item => {
+                // 질문에서도 모든 공백을 제거한 후 정규식으로 검사
+                const qNorm = item.q.replace(/\s+/g, '').toLowerCase();
+                return regex.test(qNorm);
+            });
+            
+            renderList(filtered);
+        });
+
+        // 초기화
+        renderList(qnaData); // 초기에는 전체 데이터 로드
+
+    </script>
+</body>
+</html>
