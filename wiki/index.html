@@ -128,24 +128,32 @@
             </div>
         </section>
 
-        <section id="links" class="mb-12">
+     <section id="links" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="link" class="text-blue-500 w-6 h-6"></i> 2. 관련 링크
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 첫 번째 카드 -->
                 <div class="bg-white border border-gray-200 p-5 rounded-xl shadow-sm">
                     <h3 class="font-bold text-lg mb-3 flex items-center gap-2 text-indigo-700">
                         <i data-lucide="globe" class="w-5 h-5"></i> 메이플월드 월드 링크
                     </h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="https://maplestoryworlds.nexon.com/ko/play/2f1e5b3cc6894b00bd4c2624586f0d20" target="_blank" class="text-blue-600 hover:underline font-bold">메인</a></li>
-                        <li><a href="https://maplestoryworlds.nexon.com/ko/play/097ab652baa04fc5bf3b5296efc59608" target="_blank" class="text-blue-600 hover:underline">서바이벌</a></li>
-                        <li><a href="https://maplestoryworlds.nexon.com/ko/play/d896285711f04c529d94fc57e0fb9696" target="_blank" class="text-blue-600 hover:underline">아케이드</a></li>
-                        <li><a href="https://maplestoryworlds.nexon.com/ko/play/a566e533ee74477cab549d545e1c88fa" target="_blank" class="text-blue-600 hover:underline">거래채팅</a></li>
+                    
+                    <ul class="space-y-2 text-sm mb-4">
+                        <li>
+                            <a href="https://maplestoryworlds.nexon.com/ko/play/2f1e5b3cc6894b00bd4c2624586f0d20" target="_blank" class="text-blue-600 hover:underline font-bold">메인</a>
+                        </li>
                     </ul>
+
+                    <!-- 추가된 안내사항 영역 -->
+                    <p class="text-xs text-gray-500 flex items-center gap-1 bg-gray-50 p-2 rounded-md border border-gray-100">
+                        <i data-lucide="info" class="w-3.5 h-3.5 text-gray-400"></i>
+                        2026년 5월 7일부로 하나의 월드로 통합됨
+                    </p>
                 </div>
 
+                <!-- 두 번째 카드 -->
                 <div class="bg-white border border-gray-200 p-5 rounded-xl shadow-sm">
                     <h3 class="font-bold text-lg mb-3 flex items-center gap-2 text-indigo-700">
                         <i data-lucide="users" class="w-5 h-5"></i> 기타 커뮤니티 & 족보
@@ -161,9 +169,9 @@
                         <li><a href="https://spjb.kr" target="_blank" class="text-blue-600 hover:underline">심플족보</a></li>
                     </ul>
                 </div>
-            </div>
+            </div> 
         </section>
-
+        
         <section id="developer" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="code" class="text-blue-500 w-6 h-6"></i> 3. 개발자
@@ -274,59 +282,98 @@
             </div>
         </section>
 
-        <section id="modes" class="mb-12">
-            <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
-                <i data-lucide="gamepad-2" class="text-blue-500 w-6 h-6"></i> 6. 게임 모드
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-                    <div class="bg-blue-600 text-white font-bold p-3 text-center text-lg">서바이벌</div>
-                    <ul class="p-5 space-y-3 text-center text-gray-700 text-sm">
-                        <li>브레인 써바써바 개인전</li>
-                        <li>서바이벌 올라올라</li>
-                        <li>서바이벌 꽁꽁</li>
-                        <li>서바이벌 꼬로록</li>
-                        <li>서바이벌 올라타자</li>
-                        <li>서바이벌 OX</li>
-                        <li>서바이벌 XO</li>
-                    </ul>
-                </div>
-                
-                <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-                    <div class="bg-indigo-500 text-white font-bold p-3 text-center text-lg">아케이드 & 보드</div>
-                    <ul class="p-5 text-center text-gray-700 text-sm grid grid-cols-2 gap-y-3 gap-x-2">
-                        <li>큐핑</li>
-                        <li>아쿠아</li>
-                        <li>햄버거</li>
-                        <li>입어입어</li>
-                        <li>가로세로</li>
-                        <li>오델로</li>
-                        <li>연상퀴즈</li>
-                        <li>원카드</li>
-                        <li>알쏭달쏭</li>
-                        <li>바이러스</li>
-                        <li>한자퀴즈</li>
-                        <li>오목</li>
-                        <li class="col-span-2 mt-1">초능력 윷놀이<br><span class="text-xs text-gray-500">(자체 개발)</span></li>
-                    </ul>
-                </div>
+<section id="modes" class="mb-12">
+    <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2 mb-6">
+        <i data-lucide="gamepad-2" class="text-blue-500 w-6 h-6"></i> 6. 게임 모드
+    </h2>
+    
+    <!-- 모드 카테고리 (6개로 분할) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        
+        <!-- 서바이벌 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-col">
+            <div class="bg-blue-600 text-white font-bold p-3 text-center text-lg">서바이벌</div>
+            <ul class="p-5 space-y-2 text-center text-gray-700 text-sm flex-1">
+                <li>브레인 써바써바 개인전</li>
+                <li>서바이벌 올라올라</li>
+                <li>서바이벌 꽁꽁</li>
+                <li>서바이벌 꼬로록</li>
+                <li>서바이벌 올라타자</li>
+                <li>서바이벌 OX</li>
+                <li>서바이벌 XO</li>
+            </ul>
+        </div>
+        
+        <!-- 퀴즈퀴즈 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-col">
+            <div class="bg-orange-500 text-white font-bold p-3 text-center text-lg">퀴즈퀴즈</div>
+            <ul class="p-5 space-y-2 text-center text-gray-700 text-sm flex-1">
+                <li>가로세로</li>
+                <li>연상퀴즈</li>
+                <li>한자퀴즈</li>
+            </ul>
+        </div>
 
-                <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-col">
-                    <div class="bg-teal-500 text-white font-bold p-3 text-center text-lg">거래채팅</div>
-                    <ul class="p-5 space-y-3 text-center text-gray-700 text-sm flex-1">
-                        <li>개인샵</li>
-                        <li>퍼니챗</li>
-                        <li>이야기방</li>
-                        <li>모임대화방</li>
-                        <li>(구)이야기방</li>
-                        <li>(구)모임대화방</li>
-                        <li>바이킹대화방</li>
-                        <li>회전목마방</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <!-- 보드 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-col">
+            <div class="bg-indigo-500 text-white font-bold p-3 text-center text-lg">보드</div>
+            <ul class="p-5 space-y-2 text-center text-gray-700 text-sm flex-1">
+                <li>바이러스</li>
+                <li>알쏭달쏭</li>
+                <li>오델로</li>
+                <li>오목</li>
+                <li>원카드</li>
+                <li class="mt-2 pt-2 border-t border-gray-100">초능력 윷놀이 <br><span class="text-xs text-gray-500">(자체 개발)</span></li>
+            </ul>
+        </div>
+
+        <!-- 아케이드 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-col">
+            <div class="bg-pink-500 text-white font-bold p-3 text-center text-lg">아케이드</div>
+            <ul class="p-5 space-y-2 text-center text-gray-700 text-sm flex-1">
+                <li>싱글탱글</li>
+                <li>싱글탱글+</li>
+                <li>아쿠아</li>
+                <li>입어입어</li>
+                <li>큐핑</li>
+                <li>햄버거</li>
+            </ul>
+        </div>
+
+        <!-- 거래 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-col">
+            <div class="bg-emerald-500 text-white font-bold p-3 text-center text-lg">거래</div>
+            <ul class="p-5 space-y-2 text-center text-gray-700 text-sm flex-1">
+                <li>개인샵플러스</li>
+                <li>모임대화방</li>
+                <li>이야기방</li>
+            </ul>
+        </div>
+
+        <!-- 채팅 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-col">
+            <div class="bg-teal-500 text-white font-bold p-3 text-center text-lg">채팅</div>
+            <ul class="p-5 space-y-2 text-center text-gray-700 text-sm flex-1">
+                <li>모임대화방</li>
+                <li>이야기방</li>
+                <li>퍼니챗</li>
+                <li>바이킹대화방</li>
+                <li>회전목마방</li>
+                <li>(구)모임대화방</li>
+                <li>(구)이야기방</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- 모든 채널 안내사항 -->
+    <div class="mt-6 bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-center gap-3 shadow-sm">
+        <i data-lucide="info" class="text-blue-500 w-5 h-5 flex-shrink-0"></i>
+        <p class="text-sm text-gray-700">
+            <strong>참고:</strong> 모든 채널에서 <strong>일대일대화방</strong> 및 <strong>교환방</strong> 만들기가 가능합니다.
+        </p>
+    </div>
+</section>
 
         <section id="level" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
@@ -568,7 +615,6 @@
                     </h3>
                     <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 pl-1">
                         <li>같은 네트워크 환경에서는 <strong>동일 방에 최대 2개 계정</strong>만 입장 가능하다.</li>
-                        <li>채널당 수용 인원은 <strong>최대 100명</strong>이며, 우측 상단 메뉴(…) 아이콘을 누르면 현재 채널 인원을 확인할 수 있다.</li>
                         <li>방이 자동으로 생성되는 서바이벌류 게임은 <strong>항상 동일한 초 단위에 생성</strong>된다. (예: 1시 34분 30초, 1시 38분 30초)</li>
                         <li>서바이벌 게임에서 나가기 버튼으로 <strong>3회 이상 퇴장할 경우 재입장 쿨타임</strong>이 발생한다.</li>
                         <li>서바이벌 객관식 문제에서 채팅으로 숫자를 입력하면 정답판이 들린다.
@@ -603,27 +649,36 @@
                     </div>
                 </div>
 
-                <!-- 유저 기능 정보 -->
-                <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm h-full">
-                    <h3 class="font-bold text-indigo-700 text-lg mb-3 border-b pb-2 flex items-center gap-2">
-                        <i data-lucide="users-round" class="w-5 h-5"></i> 유저 기능 정보
-                    </h3>
-                    <ul class="list-disc list-inside space-y-3 text-sm text-gray-700 pl-1">
-                        <li>귓속말과 길드채팅은 <strong>월드 무관하게 전송</strong>된다.</li>
-                        <li>커플 해지는 <strong>동일 채널에서만 상호 해지</strong>된다. 동일 채널이 아니거나 미접속인 경우, 해지를 누른 사람에게만 적용된다.</li>
-                        <li>친구추가, 입은 옷 보기, 길드 초대, 사이버머니 주기, 선물하기는 <strong>동일 채널에서만</strong> 가능하다.</li>
-                        <li><strong>블랙리스트 추가</strong>는 미접속 유저를 대상으로도 가능하다.
-                            <ul class="list-[circle] list-inside mt-2 ml-4 text-gray-600 space-y-1">
-                                <li>블랙리스트 유저의 일반 채팅 및 확성기가 표시되지 않는다.</li>
-                                <li>귓속말을 보낼 경우 ‘무시 상태’ 안내가 표시되며 전달되지 않는다.</li>
-                                <li>등록한 유저의 방에 입장할 경우 ‘블랙리스트 등록’ 안내가 표시되며 입장할 수 없다.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<!-- 유저 기능 정보 -->
+<div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm h-full">
+    <h3 class="font-bold text-indigo-700 text-lg mb-3 border-b pb-2 flex items-center gap-2">
+        <i data-lucide="users-round" class="w-5 h-5"></i> 유저 기능 정보
+    </h3>
+    <ul class="list-disc list-inside space-y-3 text-sm text-gray-700 pl-1">
+        <!-- 1. 소셜 기능 -->
+        <li>귓속말, 친구추가, 입은 옷 보기, 길드 초대, 사이버머니 주기, 선물하기 등 모든 소셜 기능은 <strong>채널 구분 없이</strong> 이용 가능하다.</li>
 
+        <!-- 2. 커플 해지 -->
+        <li>
+            커플 해지<strong>는 상대방이 미접속 중이어도 가능</strong>하다.
+            <ul class="list-[circle] list-inside mt-2 ml-4 text-gray-600 space-y-1">
+                <li>미접속 해지 시 본인의 정보는 즉시 삭제되며, 상대방의 정보는 삭제되지 않는다.</li>
+                <li>추후 동일한 공간에서 조우하는 시점에 정보가 동기화되어 최종 삭제된다.</li>
+            </ul>
+        </li>
+
+        <!-- 3. 블랙리스트 -->
+        <li>
+            <strong>블랙리스트 추가</strong>는 미접속 유저를 대상으로도 가능하다.
+            <ul class="list-[circle] list-inside mt-2 ml-4 text-gray-600 space-y-1">
+                <li>블랙리스트 유저의 일반 채팅 및 확성기가 표시되지 않는다.</li>
+                <li>귓속말을 보낼 경우 ‘무시 상태’ 안내가 표시되며 전달되지 않는다.</li>
+                <li>등록한 유저의 방에 입장할 경우 ‘블랙리스트 등록’ 안내가 표시되며 입장할 수 없다.</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+                
         <section id="tips" class="mb-12">
             <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="lightbulb" class="text-yellow-500 w-6 h-6"></i> 12. 유저 이용 Tip
@@ -786,6 +841,13 @@
                             <div>
                                 <p class="leading-relaxed">AI 아이템 추가 출시와 관련해, 추후 전문 도트 디자이너에게 외주를 맡기는 방안을 고려하고 있으며 상황에 따라 더 많은 AI 아이템이 추가될 수 있다.</p>
                                 <span class="text-gray-400 text-xs mt-1 block">2026.01.27, 공식 디스코드</span>
+                                                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="text-lg">💬</span>
+                            <div>
+                                <p class="leading-relaxed">Q포인트 뽑기 로직은 월드 오픈 이후 수정된 적이 없으며, 플랫폼 시스템상 인위적인 확률 조작은 불가능하다.</p>
+                                <span class="text-gray-400 text-xs mt-1 block">2026.02.24, 공식 디스코드</span>
                             </div>
                         </div>
                     </div>
@@ -1006,9 +1068,24 @@
                                 <p class="text-xs text-gray-500 mt-1 leading-relaxed">사이버머니, 1차·2차 유니크 아이템</p>
                             </div>
                         </div>
+                        <!-- 싱글탱글 -->
+                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+                            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
+                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2026.04.17</span>
+                            <div class="flex-1 sm:pt-0.5">
+                                <span class="text-gray-700">싱글탱글, 싱글탱글+ 출시</span>
+                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">버티고 정답판 지급</p>
+                            </div>
+                        </div>
+
+                        <!-- 월드 통합 -->
+                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+                            <span class="absolute w-4 h-4 bg-red-500 border-4 border-white rounded-full -left-[9px] top-0.5 sm:top-1 shadow-sm"></span>
+                            <span class="font-black text-red-600 w-24 flex-shrink-0">2026.05.07</span> 
+                            <span class="font-black text-red-600 text-base">월드 통합</span>
+                        </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <section class="mb-12 border-t-2 border-gray-200 pt-8 mt-12">
@@ -2046,7 +2123,7 @@
             </div>
         </div>
 
-        <div class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;">
+        <div class="sr-only">
     큐플레이 아카이브 아장위키는 큐플레이 설치 방법, 큐플레이 디스코드 링크, 큐플레이 족보 사이트, 큐플레이 아이템 상점 및 거래 시스템, 
     감정표현, 명령어, 성형 및 아바타 종류, 엠블럼 획득 조건 등 큐플레이 플레이에 필요한 모든 정보를 제공합니다.
 </div>
