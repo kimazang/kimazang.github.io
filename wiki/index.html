@@ -12,6 +12,7 @@
     <meta property="og:title" content="QPlay Archive Wiki">
     <meta property="og:description" content="큐플레이 아카이브 정보 총집합">
     <meta property="og:image" content="https://raw.githubusercontent.com/kimazang/kimazang.github.io/main/qp_logo.png">
+    <meta property="og:url" content="https://kimazang.github.io/wiki/">
     
     <title>큐플레이 아카이브 아장위키 | 설치·웹족보·디스코드·아이템 정보</title>
     <meta name="description" content="메이플월드 큐플레이 아카이브의 공식 디스코드, 웹족보, 아이템, 성형 및 엠블럼 정보를 담은 아장위키입니다. 큐플레이의 모든 기록을 확인하세요.">
@@ -34,17 +35,17 @@
         .section-title::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 50px; height: 2px; background-color: #3b82f6; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased block">
+<body class="bg-gray-50 text-gray-800 antialiased">
 
     <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden transition-opacity"></div>
 
-    <button id="open-sidebar" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg z-30 md:hidden hover:bg-blue-700 transition-all active:scale-95">
+    <button id="open-sidebar" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg z-30 md:hidden hover:bg-blue-700 transition-all active:scale-95" aria-label="목차 열기">
         <i data-lucide="list" class="w-6 h-6"></i>
     </button>
 
     <aside id="sidebar" class="fixed inset-y-0 left-0 bg-white w-64 border-r border-gray-200 z-50 flex flex-col h-screen transform -translate-x-full md:translate-x-0 transition-transform duration-300 shadow-2xl md:shadow-none">
         
-        <button id="close-sidebar" class="absolute top-5 right-4 text-gray-400 hover:text-gray-700 md:hidden">
+        <button id="close-sidebar" class="absolute top-5 right-4 text-gray-400 hover:text-gray-700 md:hidden" aria-label="목차 닫기">
             <i data-lucide="x" class="w-6 h-6"></i>
         </button>
 
@@ -106,16 +107,12 @@
                         <span class="font-bold text-gray-600">출시일</span>
                         <span>2024년 11월 22일</span>
                     </div>
-                    <div class="flex justify-between">
-                        <span class="font-bold text-gray-600">최대 플레이어</span>
-                        <span>채널당 100명</span>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <section id="intro" class="mb-12">
-            <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
+        <section id="intro" class="mb-12" aria-labelledby="intro-title">
+            <h2 id="intro-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="book-open" class="text-blue-500 w-6 h-6"></i> 1. 개요
             </h2>
             <div class="text-gray-700 leading-relaxed space-y-4">
@@ -128,8 +125,8 @@
             </div>
         </section>
 
-     <section id="links" class="mb-12">
-            <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
+     <section id="links" class="mb-12" aria-labelledby="links-title">
+            <h2 id="links-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="link" class="text-blue-500 w-6 h-6"></i> 2. 관련 링크
             </h2>
             
@@ -142,7 +139,7 @@
                     
                     <ul class="space-y-2 text-sm mb-4">
                         <li>
-                            <a href="https://maplestoryworlds.nexon.com/ko/play/2f1e5b3cc6894b00bd4c2624586f0d20" target="_blank" class="text-blue-600 hover:underline font-bold">메인</a>
+                            <a href="https://maplestoryworlds.nexon.com/ko/play/2f1e5b3cc6894b00bd4c2624586f0d20" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-bold">메인</a>
                         </li>
                     </ul>
 
@@ -159,21 +156,21 @@
                         <i data-lucide="users" class="w-5 h-5"></i> 기타 커뮤니티 & 족보
                     </h3>
                     <ul class="space-y-2 text-sm mb-4">
-                        <li><a href="https://discord.gg/UKE4xj5pVN" target="_blank" class="text-blue-600 hover:underline font-bold">공식 디스코드</a></li>
-                        <li><a href="https://www.youtube.com/@HANJUNable" target="_blank" class="text-blue-600 hover:underline">개발자 유튜브</a></li>
+                        <li><a href="https://discord.gg/UKE4xj5pVN" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-bold">공식 디스코드</a></li>
+                        <li><a href="https://www.youtube.com/@HANJUNable" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">개발자 유튜브</a></li>
                     </ul>
                     <hr class="my-2 border-gray-100">
                     <ul class="space-y-2 text-sm mt-3">
-                        <li><a href="https://hiquiz.co.kr" target="_blank" class="text-blue-600 hover:underline">웹족보</a> <span class="text-gray-400 text-xs">(hiquiz.co.kr)</span></li>
-                        <li><a href="https://discord.gg/B96zGNq2xg" target="_blank" class="text-blue-600 hover:underline">웹족보 디스코드</a></li>
-                        <li><a href="https://spjb.kr" target="_blank" class="text-blue-600 hover:underline">심플족보</a></li>
+                        <li><a href="https://hiquiz.co.kr" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">웹족보</a> <span class="text-gray-400 text-xs">(hiquiz.co.kr)</span></li>
+                        <li><a href="https://discord.gg/B96zGNq2xg" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">웹족보 디스코드</a></li>
+                        <li><a href="https://spjb.kr" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">심플족보</a></li>
                     </ul>
                 </div>
             </div> 
         </section>
         
-        <section id="developer" class="mb-12">
-            <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
+        <section id="developer" class="mb-12" aria-labelledby="developer-title">
+            <h2 id="developer-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="code" class="text-blue-500 w-6 h-6"></i> 3. 개발자
             </h2>
             <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
@@ -199,8 +196,8 @@
             </div>
         </section>
 
-        <section id="install" class="mb-12">
-            <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
+        <section id="install" class="mb-12" aria-labelledby="install-title">
+            <h2 id="install-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="download" class="text-blue-500 w-6 h-6"></i> 4. 설치 및 시작하기
             </h2>
             
@@ -215,7 +212,7 @@
                         <li class="pl-2">
                             <strong class="text-gray-900">넥슨 OTP 설정</strong>
                             <p class="text-sm mt-1">넥슨 OTP 미설정 시 큐플레이 아카이브 월드 접속이 불가능하다.</p>
-                            <a href="https://maplestoryworlds.nexon.com/ko/community/2129/2130/2491506" target="_blank" class="text-xs text-blue-500 hover:underline inline-block mt-1">※ 넥슨 OTP 설정 방법 안내</a>
+                            <a href="https://maplestoryworlds.nexon.com/ko/community/2129/2130/2491506" target="_blank" rel="noopener noreferrer" class="text-xs text-blue-500 hover:underline inline-block mt-1">※ 넥슨 OTP 설정 방법 안내</a>
                         </li>
                         <li class="pl-2">
                             <strong class="text-gray-900">메이플월드 설치 및 회원가입</strong>
@@ -249,8 +246,8 @@
             </div>
         </section>
 
-        <section id="rules" class="mb-12">
-            <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
+        <section id="rules" class="mb-12" aria-labelledby="rules-title">
+            <h2 id="rules-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="shield-alert" class="text-blue-500 w-6 h-6"></i> 5. 게임 규정
             </h2>
             <p class="text-sm text-gray-500 mb-6">자세한 내용은 아카이브 공식 디스코드 [월드제재규정] 채널에서 확인 가능하다.</p>
@@ -266,6 +263,7 @@
                         <li>상업적 홍보 및 광고</li>
                         <li>큐플레이 아카이브 월드 오류 악용</li>
                         <li>부적절한 거래 행위 및 결제 행위 (아이템 매니아, 현금거래 등)</li>
+                        <li>채팅 외 다른 시스템으로 타인을 괴롭히는 행위</li>
                     </ul>
                 </div>
 
@@ -282,8 +280,8 @@
             </div>
         </section>
 
-<section id="modes" class="mb-12">
-    <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2 mb-6">
+<section id="modes" class="mb-12" aria-labelledby="modes-title">
+    <h2 id="modes-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2 mb-6">
         <i data-lucide="gamepad-2" class="text-blue-500 w-6 h-6"></i> 6. 게임 모드
     </h2>
     
@@ -366,17 +364,32 @@
 
     </div>
 
-    <!-- 모든 채널 안내사항 -->
-    <div class="mt-6 bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-center gap-3 shadow-sm">
-        <i data-lucide="info" class="text-blue-500 w-5 h-5 flex-shrink-0"></i>
-        <p class="text-sm text-gray-700">
-            <strong>참고:</strong> 모든 채널에서 <strong>일대일대화방</strong> 및 <strong>교환방</strong> 개설이 가능하다.
-        </p>
-    </div>
+<!-- 안내사항 -->
+<div class="mt-6 grid grid-cols-1 gap-3">
+
+  <!-- 채널 안내 -->
+  <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-start gap-3 shadow-sm">
+    <i data-lucide="info" class="text-blue-500 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+    <p class="text-sm text-gray-700 leading-relaxed">
+      모든 채널에서 
+      <strong>일대일대화방</strong> 및 <strong>교환방</strong> 개설이 가능하다.
+    </p>
+  </div>
+
+  <!-- 아케이드 통합 안내 -->
+  <div class="bg-amber-50 border border-amber-100 rounded-xl p-4 flex items-start gap-3 shadow-sm">
+    <i data-lucide="gamepad-2" class="text-amber-500 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+    <p class="text-sm text-gray-700 leading-relaxed">
+     <strong>퀴즈퀴즈</strong>, <strong>보드</strong>, 
+      <strong>아케이드</strong>는 <strong>아케이드</strong>로 통합되어 있다.
+    </p>
+  </div>
+
+</div>
 </section>
 
-        <section id="level" class="mb-12">
-            <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
+        <section id="level" class="mb-12" aria-labelledby="level-title">
+            <h2 id="level-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="trending-up" class="text-blue-500 w-6 h-6"></i> 7. 레벨 기준
             </h2>
             <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-start gap-3 shadow-sm mb-6">
@@ -399,102 +412,214 @@
                         </tr>
                     </thead>
                     <tbody class="text-sm text-gray-700 divide-y divide-gray-100">
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">1</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 text-gray-400">불가</td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">10</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5">10,000</td></tr>
-                        <tr class="bg-blue-50/20 font-bold hover:bg-blue-50/50"><td class="p-2.5 border-r border-gray-100">51</td><td class="p-2.5 border-r border-gray-100">사파이어</td><td class="p-2.5 border-r border-gray-100">사파이어북</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">65</td><td class="p-2.5 border-r border-gray-100">퍼펙트 사파이어</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5">30,000</td></tr>
-                        <tr class="bg-blue-50/20 font-bold hover:bg-blue-50/50"><td class="p-2.5 border-r border-gray-100">66</td><td class="p-2.5 border-r border-gray-100">에메랄드</td><td class="p-2.5 border-r border-gray-100">에메랄드북</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">80</td><td class="p-2.5 border-r border-gray-100">퍼펙트 에메랄드</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5">50,000</td></tr>
-                        <tr class="bg-red-50/20 font-bold hover:bg-red-50/50"><td class="p-2.5 border-r border-gray-100">81</td><td class="p-2.5 border-r border-gray-100">루비</td><td class="p-2.5 border-r border-gray-100">루비북</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">95</td><td class="p-2.5 border-r border-gray-100">퍼펙트 루비</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5">70,000</td></tr>
-                        <tr class="bg-slate-50 font-bold hover:bg-slate-100/80"><td class="p-2.5 border-r border-gray-100">96</td><td class="p-2.5 border-r border-gray-100">다이아몬드</td><td class="p-2.5 border-r border-gray-100">다이아몬드북</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">100</td><td class="p-2.5 border-r border-gray-100">퍼펙트 다이아몬드</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5">100,000</td></tr>
-                        <tr class="bg-indigo-50/30 font-bold hover:bg-indigo-50/60"><td class="p-2.5 border-r border-gray-100">101</td><td class="p-2.5 border-r border-gray-100">사파이어 휘장</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100 font-normal">마르쿠트 구매 가능</td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">121</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100">예소드 구매 가능</td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">141</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100">호드 구매 가능</td><td class="p-2.5"></td></tr>
-                        <tr class="bg-indigo-50/30 font-bold hover:bg-indigo-50/60"><td class="p-2.5 border-r border-gray-100">160</td><td class="p-2.5 border-r border-gray-100">에메랄드 휘장</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">161</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100">네차크 구매 가능</td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">181</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100">티파레트 구매 가능</td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">201</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100">게바르 구매 가능</td><td class="p-2.5"></td></tr>
-                        <tr class="bg-indigo-50/30 font-bold hover:bg-indigo-50/60"><td class="p-2.5 border-r border-gray-100">220</td><td class="p-2.5 border-r border-gray-100">루비 휘장</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">221</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100">케세드 구매 가능</td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">241</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100">비나 구매 가능</td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">261</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100">코쿠마 구매 가능</td><td class="p-2.5"></td></tr>
-                        <tr class="bg-indigo-50/30 font-bold hover:bg-indigo-50/60"><td class="p-2.5 border-r border-gray-100">280</td><td class="p-2.5 border-r border-gray-100">다이아몬드 휘장</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5"></td></tr>
-                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">281</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100">케테르 구매 가능</td><td class="p-2.5"></td></tr>
-                        <tr class="bg-purple-50 font-black hover:bg-purple-100/60"><td class="p-2.5 border-r border-gray-100 text-purple-700">300</td><td class="p-2.5 border-r border-gray-100 text-purple-700">최대 레벨</td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5 border-r border-gray-100"></td><td class="p-2.5"></td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">1</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 text-gray-400">불가</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">10</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">10,000</td></tr>
+                        <tr class="bg-blue-50/20 font-bold hover:bg-blue-50/50"><td class="p-2.5 border-r border-gray-100">51</td><td class="p-2.5 border-r border-gray-100">사파이어</td><td class="p-2.5 border-r border-gray-100">사파이어북</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">65</td><td class="p-2.5 border-r border-gray-100">퍼펙트 사파이어</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">30,000</td></tr>
+                        <tr class="bg-blue-50/20 font-bold hover:bg-blue-50/50"><td class="p-2.5 border-r border-gray-100">66</td><td class="p-2.5 border-r border-gray-100">에메랄드</td><td class="p-2.5 border-r border-gray-100">에메랄드북</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">80</td><td class="p-2.5 border-r border-gray-100">퍼펙트 에메랄드</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">50,000</td></tr>
+                        <tr class="bg-red-50/20 font-bold hover:bg-red-50/50"><td class="p-2.5 border-r border-gray-100">81</td><td class="p-2.5 border-r border-gray-100">루비</td><td class="p-2.5 border-r border-gray-100">루비북</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">95</td><td class="p-2.5 border-r border-gray-100">퍼펙트 루비</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">70,000</td></tr>
+                        <tr class="bg-slate-50 font-bold hover:bg-slate-100/80"><td class="p-2.5 border-r border-gray-100">96</td><td class="p-2.5 border-r border-gray-100">다이아몬드</td><td class="p-2.5 border-r border-gray-100">다이아몬드북</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">100</td><td class="p-2.5 border-r border-gray-100">퍼펙트 다이아몬드</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">100,000</td></tr>
+                        <tr class="bg-indigo-50/30 font-bold hover:bg-indigo-50/60"><td class="p-2.5 border-r border-gray-100">101</td><td class="p-2.5 border-r border-gray-100">사파이어 휘장</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100 font-normal">마르쿠트 구매 가능</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">121</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">예소드 구매 가능</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">141</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">호드 구매 가능</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="bg-indigo-50/30 font-bold hover:bg-indigo-50/60"><td class="p-2.5 border-r border-gray-100">160</td><td class="p-2.5 border-r border-gray-100">에메랄드 휘장</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">161</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">네차크 구매 가능</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">181</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">티파레트 구매 가능</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">201</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">게바르 구매 가능</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="bg-indigo-50/30 font-bold hover:bg-indigo-50/60"><td class="p-2.5 border-r border-gray-100">220</td><td class="p-2.5 border-r border-gray-100">루비 휘장</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">221</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">케세드 구매 가능</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">241</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">비나 구매 가능</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">261</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">코쿠마 구매 가능</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="bg-indigo-50/30 font-bold hover:bg-indigo-50/60"><td class="p-2.5 border-r border-gray-100">280</td><td class="p-2.5 border-r border-gray-100">다이아몬드 휘장</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="hover:bg-gray-50"><td class="p-2.5 border-r border-gray-100">281</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">케테르 구매 가능</td><td class="p-2.5">&nbsp;</td></tr>
+                        <tr class="bg-purple-50 font-black hover:bg-purple-100/60"><td class="p-2.5 border-r border-gray-100 text-purple-700">300</td><td class="p-2.5 border-r border-gray-100 text-purple-700">최대 레벨</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5 border-r border-gray-100">&nbsp;</td><td class="p-2.5">&nbsp;</td></tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <section id="rewards" class="mb-12">
-            <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
-                <i data-lucide="award" class="text-blue-500 w-6 h-6"></i> 8. 서바이벌 보상 시스템
-            </h2>
-            <p class="text-sm text-gray-700 mb-4 bg-gray-50 p-3 rounded border border-gray-100">1판당 문제 수, 대기 시간을 제외한 게임 시간, 경험치, 사이버머니 보상은 다음과 같다. (1등 또는 솔로 플레이 기준)</p>
-            
-            <div class="overflow-x-auto">
-                <table class="w-full text-center border-collapse bg-white shadow-sm rounded-lg overflow-hidden border border-gray-200">
-                    <thead>
-                        <tr class="bg-gray-100 text-gray-800 text-sm font-bold">
-                            <th class="p-3 border-b border-gray-200 border-r">게임 모드</th>
-                            <th class="p-3 border-b border-gray-200 border-r">문제 수</th>
-                            <th class="p-3 border-b border-gray-200 border-r">게임 시간</th>
-                            <th class="p-3 border-b border-gray-200 border-r text-blue-600">경험치</th>
-                            <th class="p-3 border-b border-gray-200 text-yellow-600">사이버머니</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-sm text-gray-700">
-                        <tr class="hover:bg-gray-50">
-                            <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 올라올라<br><span class="text-xs font-normal text-gray-500">(1등 기준)</span></td>
-                            <td class="p-3 border-b border-gray-100 border-r">6<span class="hidden sm:inline">문제</span></td>
-                            <td class="p-3 border-b border-gray-100 border-r">3분</td>
-                            <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">1,100</td>
-                            <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">250~</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 꼬로록</td>
-                            <td class="p-3 border-b border-gray-100 border-r">10<span class="hidden sm:inline">문제</span></td>
-                            <td class="p-3 border-b border-gray-100 border-r">4분 30초</td>
-                            <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">900</td>
-                            <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">2,500</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 꽁꽁</td>
-                            <td class="p-3 border-b border-gray-100 border-r">10<span class="hidden sm:inline">문제</span></td>
-                            <td class="p-3 border-b border-gray-100 border-r">5분 20초</td>
-                            <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">900</td>
-                            <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">3,000</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 올라타자<br><span class="text-xs font-normal text-gray-500">(솔로 플레이 기준)</span></td>
-                            <td class="p-3 border-b border-gray-100 border-r">5<span class="hidden sm:inline">문제</span></td>
-                            <td class="p-3 border-b border-gray-100 border-r">1분 30초 ~ 2분 30초</td>
-                            <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">800</td>
-                            <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">150</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 OX</td>
-                            <td class="p-3 border-b border-gray-100 border-r">15<span class="hidden sm:inline">문제</span></td>
-                            <td class="p-3 border-b border-gray-100 border-r">9분 30초</td>
-                            <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">1,300</td>
-                            <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">3,500</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 XO</td>
-                            <td class="p-3 border-b border-gray-100 border-r">15<span class="hidden sm:inline">문제</span></td>
-                            <td class="p-3 border-b border-gray-100 border-r">9분 30초</td>
-                            <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">700</td>
-                            <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">3,500</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
 
-        <section id="hotkeys" class="mb-12">
-            <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
+<section id="rewards" class="mb-12" aria-labelledby="rewards-title">
+    <h2 id="rewards-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
+        <i data-lucide="award" class="text-blue-500 w-6 h-6"></i> 8. 서바이벌 보상 시스템
+    </h2>
+
+    <p class="text-sm text-gray-700 mb-4 bg-gray-50 p-3 rounded border border-gray-100">
+        1판당 문제 수, 대기 시간을 제외한 게임 시간, 경험치, 사이버머니 보상은 다음과 같다. (1등 또는 솔로 플레이 기준)
+    </p>
+
+    <!-- 1판당 보상표 -->
+    <div class="overflow-x-auto">
+        <table class="w-full text-center border-collapse bg-white shadow-sm rounded-lg overflow-hidden border border-gray-200">
+            <thead>
+                <tr class="bg-gray-100 text-gray-800 text-sm font-bold">
+                    <th class="p-3 border-b border-gray-200 border-r">게임 모드</th>
+                    <th class="p-3 border-b border-gray-200 border-r">문제 수</th>
+                    <th class="p-3 border-b border-gray-200 border-r">게임 시간</th>
+                    <th class="p-3 border-b border-gray-200 border-r text-blue-600">경험치</th>
+                    <th class="p-3 border-b border-gray-200 text-yellow-600">사이버머니</th>
+                </tr>
+            </thead>
+
+            <tbody class="text-sm text-gray-700">
+                <tr class="hover:bg-gray-50">
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">
+                        서바이벌 올라올라<br>
+                        <span class="text-xs font-normal text-gray-500">(1등 기준)</span>
+                    </td>
+                    <td class="p-3 border-b border-gray-100 border-r">6<span class="hidden sm:inline">문제</span></td>
+                    <td class="p-3 border-b border-gray-100 border-r">3분</td>
+                    <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">1,100</td>
+                    <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">250~</td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 꼬로록</td>
+                    <td class="p-3 border-b border-gray-100 border-r">10<span class="hidden sm:inline">문제</span></td>
+                    <td class="p-3 border-b border-gray-100 border-r">4분 30초</td>
+                    <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">900</td>
+                    <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">2,500</td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 꽁꽁</td>
+                    <td class="p-3 border-b border-gray-100 border-r">10<span class="hidden sm:inline">문제</span></td>
+                    <td class="p-3 border-b border-gray-100 border-r">5분 20초</td>
+                    <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">900</td>
+                    <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">3,000</td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">
+                        서바이벌 올라타자<br>
+                        <span class="text-xs font-normal text-gray-500">(솔로 플레이 기준)</span>
+                    </td>
+                    <td class="p-3 border-b border-gray-100 border-r">5<span class="hidden sm:inline">문제</span></td>
+                    <td class="p-3 border-b border-gray-100 border-r">1분 30초 ~ 2분 30초</td>
+                    <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">800</td>
+                    <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">150</td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 OX</td>
+                    <td class="p-3 border-b border-gray-100 border-r">15<span class="hidden sm:inline">문제</span></td>
+                    <td class="p-3 border-b border-gray-100 border-r">9분 30초</td>
+                    <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">1,300</td>
+                    <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">3,500</td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 XO</td>
+                    <td class="p-3 border-b border-gray-100 border-r">15<span class="hidden sm:inline">문제</span></td>
+                    <td class="p-3 border-b border-gray-100 border-r">9분 30초</td>
+                    <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">700</td>
+                    <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">3,500</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 1시간 기준 보상 참고표 -->
+    <div class="mt-6">
+        <p class="text-sm text-gray-700 mb-4 bg-blue-50 p-3 rounded border border-blue-100 leading-relaxed">
+            <strong>1시간 플레이 기준 참고:</strong> 실제 플레이에서는 한 판이 끝난 뒤 다음 판을 시작하기까지의
+            <strong>대기시간을 약 30초</strong>로 가정하여 계산했다.
+            아래 수치는 <strong>1시간 동안 완료 가능한 판수</strong>를 기준으로 한 참고용 예상 보상이다.
+        </p>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-center border-collapse bg-white shadow-sm rounded-lg overflow-hidden border border-gray-200">
+                <thead>
+                    <tr class="bg-blue-50 text-gray-800 text-sm font-bold">
+                        <th class="p-3 border-b border-blue-100 border-r">게임 모드</th>
+                        <th class="p-3 border-b border-blue-100 border-r">
+                            1판 기준 소요 시간<br>
+                            <span class="text-xs font-normal text-gray-500">게임 시간 + 대기 30초</span>
+                        </th>
+                        <th class="p-3 border-b border-blue-100 border-r">
+                            1시간 기준<br>완료 가능 판수
+                        </th>
+                        <th class="p-3 border-b border-blue-100 border-r text-blue-600">1시간 예상 경험치</th>
+                        <th class="p-3 border-b border-blue-100 text-yellow-600">1시간 예상 사이버머니</th>
+                    </tr>
+                </thead>
+
+                <tbody class="text-sm text-gray-700">
+                    <tr class="hover:bg-gray-50">
+                        <td class="p-3 border-b border-gray-100 border-r font-bold">
+                            서바이벌 올라올라<br>
+                            <span class="text-xs font-normal text-gray-500">(1등 기준)</span>
+                        </td>
+                        <td class="p-3 border-b border-gray-100 border-r">3분 30초</td>
+                        <td class="p-3 border-b border-gray-100 border-r font-bold">17판</td>
+                        <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">18,700</td>
+                        <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">4,250~</td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50">
+                        <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 꼬로록</td>
+                        <td class="p-3 border-b border-gray-100 border-r">5분</td>
+                        <td class="p-3 border-b border-gray-100 border-r font-bold">12판</td>
+                        <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">10,800</td>
+                        <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">30,000</td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50">
+                        <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 꽁꽁</td>
+                        <td class="p-3 border-b border-gray-100 border-r">5분 50초</td>
+                        <td class="p-3 border-b border-gray-100 border-r font-bold">10판</td>
+                        <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">9,000</td>
+                        <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">30,000</td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50">
+                        <td class="p-3 border-b border-gray-100 border-r font-bold">
+                            서바이벌 올라타자<br>
+                            <span class="text-xs font-normal text-gray-500">(솔로 플레이 기준)</span>
+                        </td>
+                        <td class="p-3 border-b border-gray-100 border-r">2분 ~ 3분</td>
+                        <td class="p-3 border-b border-gray-100 border-r font-bold">20~30판</td>
+                        <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">16,000~24,000</td>
+                        <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">3,000~4,500</td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50">
+                        <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 OX</td>
+                        <td class="p-3 border-b border-gray-100 border-r">10분</td>
+                        <td class="p-3 border-b border-gray-100 border-r font-bold">6판</td>
+                        <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">7,800</td>
+                        <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">21,000</td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50">
+                        <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 XO</td>
+                        <td class="p-3 border-b border-gray-100 border-r">10분</td>
+                        <td class="p-3 border-b border-gray-100 border-r font-bold">6판</td>
+                        <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">4,200</td>
+                        <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">21,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-3 bg-amber-50 border border-amber-100 rounded-xl p-4 flex items-start gap-3 shadow-sm">
+            <i data-lucide="clock-3" class="text-amber-500 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+            <p class="text-sm text-gray-700 leading-relaxed">
+                <strong>계산 방식:</strong> 1판 소요 시간은 <strong>게임 시간 + 대기시간 30초</strong>로 계산했으며,
+                1시간 안에 완전히 끝낼 수 있는 판수만 반영했다.
+                실제 보상은 플레이 결과, 순위, 방 진행 속도 등에 따라 달라질 수 있다.
+            </p>
+        </div>
+    </div>
+</section>
+
+        
+
+        <section id="hotkeys" class="mb-12" aria-labelledby="hotkeys-title">
+            <h2 id="hotkeys-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="keyboard" class="text-blue-500 w-6 h-6"></i> 9. 단축키 및 명령어
             </h2>
             
@@ -543,8 +668,8 @@
             </div>
         </section>
 
-        <section id="shop" class="mb-12">
-            <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
+        <section id="shop" class="mb-12" aria-labelledby="shop-title">
+            <h2 id="shop-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="shopping-cart" class="text-blue-500 w-6 h-6"></i> 10. 아이템 상점 및 거래 시스템
             </h2>
             
@@ -589,8 +714,8 @@
             </div>
         </section>
 
-        <section id="misc" class="mb-12">
-            <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
+        <section id="misc" class="mb-12" aria-labelledby="misc-title">
+            <h2 id="misc-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="layers" class="text-blue-500 w-6 h-6"></i> 11. 기타 게임 정보
             </h2>
             
@@ -635,6 +760,7 @@
                     <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 pl-1">
                         <li>레벨업 보석북(사파이어북, 에메랄드북 등)은 선물이 불가능하며, 구매 후 가방에 소지하면 레벨업 시 자동 적용된다.</li>
                         <li><strong>정답률쉴드</strong>: 가방에서 클릭해 활성화해야 한다. 기한이 남아 있어도 추가 구매 시 누적 연장되며, 유효기간은 로비 좌측 상단 UI에 표시된다.</li>
+                        <li><strong>부활카드</strong>: 서바이벌 꼬로록·서바이벌 꽁꽁에서만 사용 가능하며, 매크로 문제에서는 사용할 수 없다. 최초 부활 시 1장, 두 번째 부활 시 2장이 소모된다.</li>
                         <li><strong>매직이펙트</strong>: 유지형과 발동형으로 구분된다. 선물하기가 불가능하며, 보유 캐시로만 직접 구매 가능하다.</li>
                         <li><strong>큐피몬</strong>: 상점에 재판매가 불가능하다. (개인샵 거래는 가능)</li>
                         <li><strong>정보꾸미기</strong>: 사용 시 즉시 소모되며 효과는 영구 유지된다. <span class="text-gray-500">(초기 상태 복구 시 ‘기본패턴’ 구매 필요)</span></li>
@@ -674,14 +800,16 @@
                 <li>블랙리스트 유저의 일반 채팅 및 확성기가 표시되지 않는다.</li>
                 <li>귓속말을 보낼 경우 ‘무시 상태’ 안내가 표시되며 전달되지 않는다.</li>
                 <li>등록한 유저의 방에 입장할 경우 ‘블랙리스트 등록’ 안내가 표시되며 입장할 수 없다.</li>
-</ul>
+            </ul>
+        </li>
+    </ul>
 </div>
 
 </div>
 </section>
                 
-<section id="tips" class="mb-12">
-    <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
+<section id="tips" class="mb-12" aria-labelledby="tips-title">
+    <h2 id="tips-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
         <i data-lucide="lightbulb" class="text-yellow-500 w-6 h-6"></i> 12. 유저 이용 Tip
     </h2>
 
@@ -709,7 +837,7 @@
                             </li>
                             <li>
                                 <strong>메이플월드 친구추가</strong><br>
-                                <span class="text-gray-700 ml-4 inline-block">넥슨ID를 메이플월드 친구로 추가하면, 친구가 접속한 채널에 [같이 플레이하기] 버튼으로 접속할 수 있다. 채널 인원이 100명으로 가득 찬 경우 즉시 접속은 불가하지만, 계속 재시도할 수 있다.</span>
+                                <span class="text-gray-700 ml-4 inline-block">넥슨ID를 메이플월드 친구로 추가하면 접속 여부를 빠르게 확인할 수 있으며, 메이플월드 메신저 기능으로 소통이 가능하다.</span>
                             </li>
                             <li>
                                 <strong>메이플월드 프로필</strong><br>
@@ -770,8 +898,8 @@
             </div>
         </section>
 
-        <section id="trivia" class="mb-12">
-            <h2 class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
+        <section id="trivia" class="mb-12" aria-labelledby="trivia-title">
+            <h2 id="trivia-title" class="text-2xl font-bold section-title text-gray-800 flex items-center gap-2">
                 <i data-lucide="message-circle" class="text-blue-500 w-6 h-6"></i> 13. 여담
             </h2>
             
@@ -833,13 +961,6 @@
                         <div class="flex gap-3">
                             <span class="text-lg">💬</span>
                             <div>
-                                <p class="leading-relaxed">가능할 지 모르겠으나, 모든 월드를 통합하고 최대 접속 가능 인원을 확대하여 <strong>단일 월드로 운영하는 방안을 2026년 목표로 검토 중</strong>이다.</p>
-                                <span class="text-gray-400 text-xs mt-1 block">2026.01.01, 공식 디스코드</span>
-                            </div>
-                        </div>
-                        <div class="flex gap-3">
-                            <span class="text-lg">💬</span>
-                            <div>
                                 <p class="leading-relaxed">AI 아이템 추가 출시와 관련해, 추후 전문 도트 디자이너에게 외주를 맡기는 방안을 고려하고 있으며 상황에 따라 더 많은 AI 아이템이 추가될 수 있다.</p>
                                 <span class="text-gray-400 text-xs mt-1 block">2026.01.27, 공식 디스코드</span>
                                                             </div>
@@ -855,244 +976,302 @@
                 </div>
 
                 <div>
-                    <h3 class="font-bold text-xl mb-6 text-gray-800 flex items-center gap-2">
-                        <i data-lucide="history" class="w-5 h-5 text-blue-500"></i> 서버 주요 히스토리
-                    </h3>
-                    <div class="relative border-l-2 border-gray-200 ml-4 py-2 space-y-6 text-sm text-gray-700">
-                        <!-- 서버 오픈 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-4 h-4 bg-blue-500 border-4 border-white rounded-full -left-[9px] top-0.5 sm:top-1 shadow-sm"></span>
-                            <span class="font-black text-blue-600 w-24 flex-shrink-0">2024.11.22</span> 
-                            <span class="font-black text-blue-600 text-base">서버 오픈</span>
-                        </div>
-                        <!-- 오픈 이벤트 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2024.11.22</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-indigo-600">오픈 이벤트</span> <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 11.29</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">아카이브 풍선, 동갑내기 엠블럼, 퀴즈퀴즈 엠블럼 지급</p>
-                            </div>
-                        </div>
-                        <!-- 알쏭달쏭 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2024.12.05</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="text-gray-700">알쏭달쏭 출시</span>
-                            </div>
-                        </div>
-                        <!-- 1차 복권방 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-amber-400 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2024.12.05</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-amber-600">1차 복권방 오픈</span> <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 12.12</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">사이버머니, 1차 유니크 아이템</p>
-                            </div>
-                        </div>
-                        <!-- 가로세로 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.01.02</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="text-gray-700">가로세로 출시</span>
-                            </div>
-                        </div>
-                        <!-- 바이러스 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.01.09</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="text-gray-700">바이러스 출시</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">청소부 캐릭터 지급</p>
-                            </div>
-                        </div>
-                        <!-- 프리미엄 성형 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-emerald-500 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.02.06</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-emerald-600">프리미엄 성형 추가</span>
-                            </div>
-                        </div>
-                        <!-- 퍼니챗 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.02.13</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="text-gray-700">퍼니챗 출시</span>
-                            </div>
-                        </div>
-                        <!-- 입어입어 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.02.20</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="text-gray-700">입어입어 출시</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">옷훔친냥이 캐릭터 지급</p>
-                            </div>
-                        </div>
-                        <!-- 길드 시스템 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-emerald-500 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.03.22</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-emerald-600">길드 시스템 추가</span>
-                            </div>
-                        </div>
-                        <!-- 출석체크 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.03.27</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-indigo-600">출석체크 이벤트</span> <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 04.30</span>
-                            </div>
-                        </div>
-                        <!-- 만우절 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.04.01</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-indigo-600">만우절 이벤트</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">큐플운영/큐플폴리스 캐릭터 지급</p>
-                            </div>
-                        </div>
-                        <!-- 초능력 윷놀이 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.04.28</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="text-gray-700">초능력 윷놀이 출시</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">큐피몬 풍선 지급</p>
-                            </div>
-                        </div>
-                        <!-- 100K 출석체크 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.05.22</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-indigo-600">누적접속자 100K 달성 출석체크 이벤트</span> <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 06.30</span>
-                            </div>
-                        </div>
-                        <!-- 아쿠아 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.05.29</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="text-gray-700">아쿠아 출시</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">깜찍상어슈트 캐릭터 지급</p>
-                            </div>
-                        </div>
-                        <!-- 큐핑 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.06.19</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="text-gray-700">큐핑 출시</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">큐숭이 캐릭터 지급</p>
-                            </div>
-                        </div>
-                        <!-- 광복절 출석체크 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.08.01</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-indigo-600">국가보훈부 콜라보 광복퀴즈 출석체크 이벤트</span>
-                                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 08.31</span>
-                                <p class="text-xs text-gray-500 mt-1.5 leading-relaxed">보훈캐릭보보 캐릭터, 단지동맹 정답판, 홍범도장군모, 김구선생안경, 안중군의사옷, 광복자주점퍼, 광복자주후드 지급</p>
-                            </div>
-                        </div>
-                        <!-- 한자퀴즈 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.08.28</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="text-gray-700">한자퀴즈 출시</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">큐플도령/큐플아씨 캐릭터 지급</p>
-                            </div>
-                        </div>
-                        <!-- 2차 복권방 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-amber-400 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.10.03</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-amber-600">2차 복권방 오픈</span> <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 10.09</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">사이버머니, 무지개 날개</p>
-                            </div>
-                        </div>
-                        <!-- 추석 출석체크 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.10.03</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-indigo-600">추석 기념 출석체크 이벤트</span> <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 10.31</span>
-                            </div>
-                        </div>
-                        <!-- 1주년 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-4 h-4 bg-rose-500 border-4 border-white rounded-full -left-[9px] top-0.5 sm:top-1 shadow-sm"></span>
-                            <span class="font-black text-rose-600 w-24 flex-shrink-0">2025.11.22</span> 
-                            <span class="font-black text-rose-600 text-base">서버 오픈 1주년</span>
-                        </div>
-                        <!-- 브레인 써바써바 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.11.22</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="text-gray-700">브레인 써바써바(개인전) 출시</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">브레인소년/브레인소녀 캐릭터 지급</p>
-                            </div>
-                        </div>
-                        <!-- 1주년 출석체크 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.11.22</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-indigo-600">1주년 기념 브레인 써바써바 출석체크 이벤트</span> <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 12.31</span>
-                            </div>
-                        </div>
-                        <!-- 설날 출석체크 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2026.02.13</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-indigo-600">설날 기념 이벤트 OX 출석체크 이벤트</span> <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 02.22</span>
-                            </div>
-                        </div>
-                        <!-- 3차 복권방 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-amber-400 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2026.02.13</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="font-bold text-amber-600">3차 복권방 오픈</span> <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 02.22</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">사이버머니, 1차·2차 유니크 아이템</p>
-                            </div>
-                        </div>
-                        <!-- 싱글탱글 -->
-                        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
-                            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2026.04.17</span>
-                            <div class="flex-1 sm:pt-0.5">
-                                <span class="text-gray-700">싱글탱글, 싱글탱글+ 출시</span>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">버티고 정답판 지급</p>
-                            </div>
-                        </div>
 
-                        <!-- 월드 통합 -->
-<div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                            <span class="absolute w-4 h-4 bg-red-500 border-4 border-white rounded-full -left-[9px] top-0.5 sm:top-1 shadow-sm"></span>
-                            <span class="font-black text-red-600 w-24 flex-shrink-0">2026.05.07</span> 
-                            <span class="font-black text-red-600 text-base">월드 통합</span>
-                        </div>
-                    </div>
-                </div>
+<div>
+    <h3 class="font-bold text-xl mb-6 text-gray-800 flex items-center gap-2">
+        <i data-lucide="history" class="w-5 h-5 text-blue-500"></i> 서버 주요 히스토리
+    </h3>
 
-                </div> 
-        </section>
+    <div class="relative border-l-2 border-gray-200 ml-4 py-2 space-y-6 text-sm text-gray-700">
 
-        <section class="mb-12 border-t-2 border-gray-200 pt-8 mt-12">
-            <h2 class="text-2xl font-black text-gray-900 mb-6 text-center">부록</h2>
+        <!-- 서버 오픈 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-4 h-4 bg-blue-500 border-4 border-white rounded-full -left-[9px] top-0.5 sm:top-1 shadow-sm"></span>
+            <span class="font-black text-blue-600 w-24 flex-shrink-0">2024.11.22</span>
+            <span class="font-black text-blue-600 text-base">서버 오픈</span>
+        </div>
+
+        <!-- 오픈 이벤트 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2024.11.22</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-indigo-600">오픈 이벤트</span>
+                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 11.29</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">아카이브 풍선, 동갑내기 엠블럼, 퀴즈퀴즈 엠블럼 지급</p>
+            </div>
+        </div>
+
+        <!-- 알쏭달쏭 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2024.12.05</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="text-gray-700">알쏭달쏭 출시</span>
+            </div>
+        </div>
+
+        <!-- 1차 복권방 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-amber-400 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2024.12.05</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-amber-600">1차 복권방 오픈</span>
+                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 12.12</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">사이버머니, 1차 유니크 아이템</p>
+            </div>
+        </div>
+
+        <!-- 가로세로 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.01.02</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="text-gray-700">가로세로 출시</span>
+            </div>
+        </div>
+
+        <!-- 바이러스 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.01.09</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="text-gray-700">바이러스 출시</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">청소부 캐릭터 지급</p>
+            </div>
+        </div>
+
+        <!-- 프리미엄 성형 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-emerald-500 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.02.06</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-emerald-600">프리미엄 성형 추가</span>
+            </div>
+        </div>
+
+        <!-- 퍼니챗 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.02.13</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="text-gray-700">퍼니챗 출시</span>
+            </div>
+        </div>
+
+        <!-- 입어입어 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.02.20</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="text-gray-700">입어입어 출시</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">옷훔친냥이 캐릭터 지급</p>
+            </div>
+        </div>
+
+        <!-- 길드 시스템 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-emerald-500 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.03.22</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-emerald-600">길드 시스템 추가</span>
+            </div>
+        </div>
+
+        <!-- 출석체크 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.03.27</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-indigo-600">출석체크 이벤트</span>
+                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 04.30</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">특별상점(교환 가능) 뽑기 이용권 지급</p>
+            </div>
+        </div>
+
+        <!-- 만우절 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.04.01</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-indigo-600">만우절 이벤트</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">큐플운영/큐플폴리스 캐릭터 지급</p>
+            </div>
+        </div>
+
+        <!-- 초능력 윷놀이 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.04.28</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="text-gray-700">초능력 윷놀이 출시</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">큐피몬 풍선 지급</p>
+            </div>
+        </div>
+
+        <!-- 100K 출석체크 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.05.22</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-indigo-600">누적접속자 100K 달성 출석체크 이벤트</span>
+                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 06.30</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">특별상점 뽑기 이용권 지급</p>
+            </div>
+        </div>
+
+        <!-- 아쿠아 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.05.29</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="text-gray-700">아쿠아 출시</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">깜찍상어슈트 캐릭터 지급</p>
+            </div>
+        </div>
+
+        <!-- 큐핑 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.06.19</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="text-gray-700">큐핑 출시</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">큐숭이 캐릭터 지급</p>
+            </div>
+        </div>
+
+        <!-- 광복절 출석체크 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.08.01</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-indigo-600">국가보훈부 콜라보 광복퀴즈 출석체크 이벤트</span>
+                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 08.31</span>
+                <p class="text-xs text-gray-500 mt-1.5 leading-relaxed">
+                    보훈캐릭보보 캐릭터, 단지동맹 정답판, 홍범도장군모, 김구선생안경, 안중군의사옷, 광복자주점퍼, 광복자주후드, 특별상점 뽑기 이용권 지급
+                </p>
+            </div>
+        </div>
+
+        <!-- 한자퀴즈 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.08.28</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="text-gray-700">한자퀴즈 출시</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">큐플도령/큐플아씨 캐릭터 지급</p>
+            </div>
+        </div>
+
+        <!-- 2차 복권방 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-amber-400 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.10.03</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-amber-600">2차 복권방 오픈</span>
+                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 10.09</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">사이버머니, 무지개 날개</p>
+            </div>
+        </div>
+
+        <!-- 추석 출석체크 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.10.03</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-indigo-600">추석 기념 출석체크 이벤트</span>
+                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 10.31</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">특별상점 뽑기 이용권 지급</p>
+            </div>
+        </div>
+
+        <!-- 1주년 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-4 h-4 bg-rose-500 border-4 border-white rounded-full -left-[9px] top-0.5 sm:top-1 shadow-sm"></span>
+            <span class="font-black text-rose-600 w-24 flex-shrink-0">2025.11.22</span>
+            <span class="font-black text-rose-600 text-base">서버 오픈 1주년</span>
+        </div>
+
+        <!-- 브레인 써바써바 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.11.22</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="text-gray-700">브레인 써바써바(개인전) 출시</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">브레인소년/브레인소녀 캐릭터 지급</p>
+            </div>
+        </div>
+
+        <!-- 1주년 출석체크 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2025.11.22</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-indigo-600">1주년 기념 브레인 써바써바 출석체크 이벤트</span>
+                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 12.31</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">특별상점(Q뽑기/요술 1~5기) 뽑기 이용권 지급</p>
+            </div>
+        </div>
+
+        <!-- 설날 출석체크 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2026.02.13</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-indigo-600">설날 기념 이벤트 OX 출석체크 이벤트</span>
+                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 02.22</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">특별상점 뽑기 이용권 지급</p>
+            </div>
+        </div>
+
+        <!-- 3차 복권방 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-amber-400 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2026.02.13</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-amber-600">3차 복권방 오픈</span>
+                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-gray-100 text-gray-500 ml-1 align-middle">~ 02.22</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">사이버머니, 1차·2차 유니크 아이템</p>
+            </div>
+        </div>
+
+        <!-- 싱글탱글 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2026.04.17</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="text-gray-700">싱글탱글, 싱글탱글+ 출시</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">버티고 정답판 지급</p>
+            </div>
+        </div>
+
+        <!-- 월드 통합 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-4 h-4 bg-red-500 border-4 border-white rounded-full -left-[9px] top-0.5 sm:top-1 shadow-sm"></span>
+            <span class="font-black text-red-600 w-24 flex-shrink-0">2026.05.07</span>
+            <span class="font-black text-red-600 text-base">월드 통합</span>
+        </div>
+
+        <!-- 월드컵 승부예측 이벤트 -->
+        <div class="pl-6 relative flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
+            <span class="absolute w-3 h-3 bg-indigo-500 rounded-full -left-[7px] top-1.5"></span>
+            <span class="font-bold text-gray-500 w-24 flex-shrink-0 sm:pt-0.5">2026.06.09</span>
+            <div class="flex-1 sm:pt-0.5">
+                <span class="font-bold text-indigo-600">2026 FIFA 북중미 월드컵 승부예측 이벤트</span>
+                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-purple-50 text-purple-500 ml-1 align-middle">~ 06.12</span>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">특별상점 뽑기 이용권, /월드컵응원 매직 이펙트 지급</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+</div>
+</section>
+
+        <section id="appendix" class="mb-12 border-t-2 border-gray-200 pt-8 mt-12" aria-labelledby="appendix-title">
+            <h2 id="appendix-title" class="text-2xl font-black text-gray-900 mb-6 text-center">부록</h2>
             
             <div class="space-y-8">
                 <div id="app1" class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm text-center">
@@ -2099,41 +2278,37 @@
             </div>
         </section>
 
- <!-- 위키 작성자 명함 -->
-        <div class="mt-28 mb-10 max-w-sm mx-auto relative group">
-            <!-- Decorative ring -->
-            <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-[2.5rem] blur-md opacity-40 group-hover:opacity-70 transition duration-500"></div>
-            
-            <div class="relative bg-white/90 backdrop-blur-md border border-white/80 rounded-[2.5rem] p-8 pt-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center">
-                <!-- Floating Avatar -->
-                <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-white rounded-full p-2 shadow-sm border border-gray-100 transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2">
-                    <div class="w-full h-full bg-blue-50 rounded-full overflow-hidden flex items-center justify-center">
-                        <img src="https://raw.githubusercontent.com/kimazang/kimazang.github.io/main/azang_pro.png" alt="아장 아바타" class="max-w-full max-h-full object-contain">
-                    </div>
-                </div>
-                
-                <h3 class="font-black text-gray-800 text-2xl tracking-tight">아장</h3>
-                <div class="inline-block px-3 py-1 bg-gray-800 text-white text-[10px] font-bold rounded-full uppercase tracking-widest mt-2 mb-6">Wiki Creator</div>
-                
-                <div class="flex justify-center gap-3">
-                    <a href="https://kimazang.tistory.com/" target="_blank" class="flex items-center gap-2 px-4 py-2.5 bg-gray-50 hover:bg-blue-50 text-gray-600 hover:text-blue-600 rounded-2xl transition-colors font-medium text-sm">
-                        <i data-lucide="link" class="w-4 h-4"></i> 티스토리
-                    </a>
-                    <a href="mailto:kimazang@gmail.com" class="flex items-center gap-2 px-4 py-2.5 bg-gray-50 hover:bg-purple-50 text-gray-600 hover:text-purple-600 rounded-2xl transition-colors font-medium text-sm">
-                        <i data-lucide="mail" class="w-4 h-4"></i> 이메일
-                    </a>
-                </div>
+<!-- 위키 작성자 명함 -->
+<div class="mt-28 mb-10 max-w-sm mx-auto relative group">
+    <!-- Decorative ring -->
+    <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-[2.5rem] blur-md opacity-40 group-hover:opacity-70 transition duration-500"></div>
+    
+    <div class="relative bg-white/90 backdrop-blur-md border border-white/80 rounded-[2.5rem] p-8 pt-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center">
+        <!-- Floating Avatar -->
+        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-white rounded-full p-2 shadow-sm border border-gray-100 transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2">
+            <div class="w-full h-full bg-blue-50 rounded-full overflow-hidden flex items-center justify-center">
+                <img src="https://raw.githubusercontent.com/kimazang/kimazang.github.io/main/azang_pro.png" alt="아장 아바타" class="max-w-full max-h-full object-contain">
             </div>
         </div>
+        
+        <h3 class="font-black text-gray-800 text-2xl tracking-tight">아장</h3>
+        <div class="inline-block px-3 py-1 bg-gray-800 text-white text-[10px] font-bold rounded-full uppercase tracking-widest mt-2 mb-6">Wiki Creator</div>
+        
+        <div class="flex justify-center gap-3">
+            <a href="https://kimazang.tistory.com/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 bg-gray-50 hover:bg-blue-50 text-gray-600 hover:text-blue-600 rounded-2xl transition-colors font-medium text-sm">
+                <i data-lucide="link" class="w-4 h-4"></i> 티스토리
+            </a>
 
-        <div class="sr-only">
-    큐플레이 아카이브 아장위키는 큐플레이 설치 방법, 큐플레이 디스코드 링크, 큐플레이 족보 사이트, 큐플레이 아이템 상점 및 거래 시스템, 
-    감정표현, 명령어, 성형 및 아바타 종류, 엠블럼 획득 조건 등 큐플레이 플레이에 필요한 모든 정보를 제공합니다.
+            <button type="button" id="copy-email-btn" class="flex items-center gap-2 px-4 py-2.5 bg-gray-50 hover:bg-purple-50 text-gray-600 hover:text-purple-600 rounded-2xl transition-colors font-medium text-sm">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>이메일 복사</span>
+            </button>
+        </div>
+    </div>
 </div>
-
         <footer class="text-center text-gray-400 text-sm mt-12 pt-8 border-t border-gray-100">
             <p>QPlay Archive Azang Wiki &copy; 2026</p>
-            <p class="text-xs mt-1">본 사이트는 메이플월드 큐플레이 아카이브의 정보를 정리한 위키입니다.</p>
+            <p class="text-xs mt-1">메이플월드 큐플레이 아카이브의 정보를 정리한 위키입니다.</p>
         </footer>
 
     </main>
@@ -2147,15 +2322,42 @@
         const overlay = document.getElementById('mobile-overlay');
         const sidebarLinks = document.querySelectorAll('#sidebar a');
 
-        function toggleMenu() {
-            sidebar.classList.toggle('-translate-x-full');
-            overlay.classList.toggle('hidden');
+
+        // 작성자 이메일 복사 버튼
+        const copyEmailBtn = document.getElementById('copy-email-btn');
+        if (copyEmailBtn) {
+            copyEmailBtn.addEventListener('click', function () {
+                const email = 'kimazang@gmail.com';
+                const text = this.querySelector('span');
+                const originalText = text.textContent;
+
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(email).then(() => {
+                        text.textContent = '복사 완료!';
+                        setTimeout(() => { text.textContent = originalText; }, 1500);
+                    }).catch(() => {
+                        alert('이메일 주소: ' + email);
+                    });
+                } else {
+                    alert('이메일 주소: ' + email);
+                }
+            });
+        }
+
+        function openMenu() {
+            sidebar.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+        }
+
+        function closeMenu() {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
         }
 
         // 버튼이나 어두운 배경을 누르면 목차가 열리거나 닫힘
-        openBtn.addEventListener('click', toggleMenu);
-        closeBtn.addEventListener('click', toggleMenu);
-        overlay.addEventListener('click', toggleMenu);
+        openBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
 
         // 부드러운 스크롤 & 모바일에서 목차 누르면 자동 닫힘 기능
         sidebarLinks.forEach(link => {
@@ -2169,7 +2371,7 @@
                     
                     // 모바일 화면(창 너비 768px 미만)일 때만 항목 누른 후 목차 닫기
                     if (window.innerWidth < 768) {
-                        toggleMenu();
+                        closeMenu();
                     }
                 }
             });
