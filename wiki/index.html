@@ -522,98 +522,94 @@
         </table>
     </div>
 
-    <!-- 1시간 기준 보상 참고표 -->
-    <div class="mt-6">
-        <p class="text-sm text-gray-700 mb-4 bg-blue-50 p-3 rounded border border-blue-100 leading-relaxed">
-            <strong>1시간 플레이 기준 참고:</strong> 실제 플레이에서는 한 판이 끝난 뒤 다음 판을 시작하기까지의
-            <strong>대기시간을 약 30초</strong>로 가정하여 계산했다.
-            아래 수치는 <strong>1시간 동안 완료 가능한 판수</strong>를 기준으로 한 참고용 예상 보상이다.
-        </p>
-
-        <div class="overflow-x-auto">
-            <table class="w-full text-center border-collapse bg-white shadow-sm rounded-lg overflow-hidden border border-gray-200">
-                <thead>
-                    <tr class="bg-blue-50 text-gray-800 text-sm font-bold">
-                        <th class="p-3 border-b border-blue-100 border-r">게임 모드</th>
-                        <th class="p-3 border-b border-blue-100 border-r">
-                            1판 기준 소요 시간<br>
-                            <span class="text-xs font-normal text-gray-500">게임 시간 + 대기 30초</span>
-                        </th>
-                        <th class="p-3 border-b border-blue-100 border-r">
-                            1시간 기준<br>완료 가능 판수
-                        </th>
-                        <th class="p-3 border-b border-blue-100 border-r text-blue-600">1시간 예상 경험치</th>
-                        <th class="p-3 border-b border-blue-100 text-yellow-600">1시간 예상 사이버머니</th>
-                    </tr>
-                </thead>
-
-                <tbody class="text-sm text-gray-700">
-                    <tr class="hover:bg-gray-50">
-                        <td class="p-3 border-b border-gray-100 border-r font-bold">
-                            서바이벌 올라올라<br>
-                            <span class="text-xs font-normal text-gray-500">(1등 기준)</span>
-                        </td>
-                        <td class="p-3 border-b border-gray-100 border-r">3분 30초</td>
-                        <td class="p-3 border-b border-gray-100 border-r font-bold">17판</td>
-                        <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">18,700</td>
-                        <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">4,250~</td>
-                    </tr>
-
-                    <tr class="hover:bg-gray-50">
-                        <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 꼬로록</td>
-                        <td class="p-3 border-b border-gray-100 border-r">5분</td>
-                        <td class="p-3 border-b border-gray-100 border-r font-bold">12판</td>
-                        <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">10,800</td>
-                        <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">30,000</td>
-                    </tr>
-
-                    <tr class="hover:bg-gray-50">
-                        <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 꽁꽁</td>
-                        <td class="p-3 border-b border-gray-100 border-r">5분 50초</td>
-                        <td class="p-3 border-b border-gray-100 border-r font-bold">10판</td>
-                        <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">9,000</td>
-                        <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">30,000</td>
-                    </tr>
-
-                    <tr class="hover:bg-gray-50">
-                        <td class="p-3 border-b border-gray-100 border-r font-bold">
-                            서바이벌 올라타자<br>
-                            <span class="text-xs font-normal text-gray-500">(솔로 플레이 기준)</span>
-                        </td>
-                        <td class="p-3 border-b border-gray-100 border-r">2분 ~ 3분</td>
-                        <td class="p-3 border-b border-gray-100 border-r font-bold">20~30판</td>
-                        <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">16,000~24,000</td>
-                        <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">3,000~4,500</td>
-                    </tr>
-
-                    <tr class="hover:bg-gray-50">
-                        <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 OX</td>
-                        <td class="p-3 border-b border-gray-100 border-r">10분</td>
-                        <td class="p-3 border-b border-gray-100 border-r font-bold">6판</td>
-                        <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">7,800</td>
-                        <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">21,000</td>
-                    </tr>
-
-                    <tr class="hover:bg-gray-50">
-                        <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 XO</td>
-                        <td class="p-3 border-b border-gray-100 border-r">10분</td>
-                        <td class="p-3 border-b border-gray-100 border-r font-bold">6판</td>
-                        <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">4,200</td>
-                        <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">21,000</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="mt-3 bg-amber-50 border border-amber-100 rounded-xl p-4 flex items-start gap-3 shadow-sm">
-            <i data-lucide="clock-3" class="text-amber-500 w-5 h-5 flex-shrink-0 mt-0.5"></i>
-            <p class="text-sm text-gray-700 leading-relaxed">
-                <strong>계산 방식:</strong> 1판 소요 시간은 <strong>게임 시간 + 대기시간 30초</strong>로 계산했으며,
-                1시간 안에 완전히 끝낼 수 있는 판수만 반영했다.
-                실제 보상은 플레이 결과, 순위, 방 진행 속도 등에 따라 달라질 수 있다.
-            </p>
-        </div>
+<!-- 1시간 기준 보상표 -->
+<div class="mt-8">
+    <div class="mb-4">
+        <h3 class="text-lg font-black text-gray-800 flex items-center gap-2">
+            <i data-lucide="clock-3" class="text-blue-500 w-5 h-5"></i>
+            1시간 기준 예상 보상
+        </h3>
     </div>
+
+    <div class="overflow-x-auto">
+        <table class="w-full text-center border-collapse bg-white shadow-sm rounded-lg overflow-hidden border border-gray-200">
+            <thead>
+                <tr class="bg-blue-50 text-gray-800 text-sm font-bold">
+                    <th class="p-3 border-b border-blue-100 border-r">게임 모드</th>
+                    <th class="p-3 border-b border-blue-100 border-r">소요 시간</th>
+                    <th class="p-3 border-b border-blue-100 border-r">판수</th>
+                    <th class="p-3 border-b border-blue-100 border-r text-blue-600">경험치</th>
+                    <th class="p-3 border-b border-blue-100 text-yellow-600">사이버머니</th>
+                </tr>
+            </thead>
+
+            <tbody class="text-sm text-gray-700">
+                <tr class="hover:bg-gray-50">
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">
+                        서바이벌 올라올라<br>
+                        <span class="text-xs font-normal text-gray-500">(1등 기준)</span>
+                    </td>
+                    <td class="p-3 border-b border-gray-100 border-r">3분 30초</td>
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">17판</td>
+                    <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">18,700</td>
+                    <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">4,250~</td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 꼬로록</td>
+                    <td class="p-3 border-b border-gray-100 border-r">5분</td>
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">12판</td>
+                    <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">10,800</td>
+                    <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">30,000</td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 꽁꽁</td>
+                    <td class="p-3 border-b border-gray-100 border-r">5분 50초</td>
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">10판</td>
+                    <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">9,000</td>
+                    <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">30,000</td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">
+                        서바이벌 올라타자<br>
+                        <span class="text-xs font-normal text-gray-500">(솔로 기준)</span>
+                    </td>
+                    <td class="p-3 border-b border-gray-100 border-r">2~3분</td>
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">20~30판</td>
+                    <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">16,000~24,000</td>
+                    <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">3,000~4,500</td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 OX</td>
+                    <td class="p-3 border-b border-gray-100 border-r">10분</td>
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">6판</td>
+                    <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">7,800</td>
+                    <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">21,000</td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">서바이벌 XO</td>
+                    <td class="p-3 border-b border-gray-100 border-r">10분</td>
+                    <td class="p-3 border-b border-gray-100 border-r font-bold">6판</td>
+                    <td class="p-3 border-b border-gray-100 border-r text-blue-600 font-bold">4,200</td>
+                    <td class="p-3 border-b border-gray-100 text-yellow-600 font-bold">21,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-3 bg-amber-50 border border-amber-100 rounded-xl p-4 flex items-start gap-3 shadow-sm">
+        <i data-lucide="calculator" class="text-amber-500 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+        <p class="text-sm text-gray-700 leading-relaxed">
+            <strong>계산 방식:</strong> 1판 소요 시간은 <strong>게임 시간 + 대기시간 30초</strong>로 계산했으며,
+            1시간 안에 완전히 끝낼 수 있는 판수만 반영했다.
+            실제 보상은 플레이 결과, 순위, 방 진행 속도 등에 따라 달라질 수 있다.
+        </p>
+    </div>
+</div>
 </section>
 
         
@@ -1582,7 +1578,7 @@
                     
                     <!-- 성형 리스트 1 (여캐 추정) -->
                     <div class="mb-8">
-                        <h4 class="font-bold text-gray-700 mb-3 border-b border-gray-100 pb-2">리스트 1</h4>
+                        <h4 class="font-bold text-gray-700 mb-3 border-b border-gray-100 pb-2">여성 캐릭터</h4>
                         <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-8 gap-3">
                             <!-- 기본 성형 -->
                             <div class="bg-blue-50/30 border border-blue-200 rounded-lg p-2 flex flex-col items-center hover:bg-blue-50 transition-colors">
@@ -1741,7 +1737,7 @@
 
                     <!-- 성형 리스트 2 (남캐 추정) -->
                     <div>
-                        <h4 class="font-bold text-gray-700 mb-3 border-b border-gray-100 pb-2">리스트 2</h4>
+                        <h4 class="font-bold text-gray-700 mb-3 border-b border-gray-100 pb-2">남성 캐릭터</h4>
                         <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-8 gap-3">
                             <!-- 기본 성형 -->
                             <div class="bg-blue-50/30 border border-blue-200 rounded-lg p-2 flex flex-col items-center hover:bg-blue-50 transition-colors">
